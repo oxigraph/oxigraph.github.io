@@ -18,6 +18,7 @@
     <link rel="shortcut icon" href="../_static/logo.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="SPARQL utility objects" href="../sparql.html" />
     <link rel="prev" title="In-Memory Store" href="memory.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -26,6 +27,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="../sparql.html" title="SPARQL utility objects"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="memory.html" title="In-Memory Store"
              accesskey="P">previous</a> |</li>
@@ -208,10 +212,10 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>a <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a> for <code class="docutils literal notranslate"><span class="pre">ASK</span></code> queries, an iterator of <a class="reference internal" href="../model.html#pyoxigraph.Triple" title="pyoxigraph.Triple"><code class="xref py py-class docutils literal notranslate"><span class="pre">Triple</span></code></a> for <code class="docutils literal notranslate"><span class="pre">CONSTRUCT</span></code> and <code class="docutils literal notranslate"><span class="pre">DESCRIBE</span></code> queries and an iterator of solution bindings for <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> queries.</p>
+<dd class="field-even"><p>a <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a> for <code class="docutils literal notranslate"><span class="pre">ASK</span></code> queries, an iterator of <a class="reference internal" href="../model.html#pyoxigraph.Triple" title="pyoxigraph.Triple"><code class="xref py py-class docutils literal notranslate"><span class="pre">Triple</span></code></a> for <code class="docutils literal notranslate"><span class="pre">CONSTRUCT</span></code> and <code class="docutils literal notranslate"><span class="pre">DESCRIBE</span></code> queries and an iterator of <a class="reference internal" href="../sparql.html#pyoxigraph.QuerySolution" title="pyoxigraph.QuerySolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuerySolution</span></code></a> for <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> queries.</p>
 </dd>
 <dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>iter(QuerySolution) or iter(<a class="reference internal" href="../model.html#pyoxigraph.Triple" title="pyoxigraph.Triple">Triple</a>) or <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
+<dd class="field-odd"><p><a class="reference internal" href="../sparql.html#pyoxigraph.QuerySolutions" title="pyoxigraph.QuerySolutions">QuerySolutions</a> or <a class="reference internal" href="../sparql.html#pyoxigraph.QueryTriples" title="pyoxigraph.QueryTriples">QueryTriples</a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)">bool</a></p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
@@ -282,6 +286,9 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
   <h4>Previous topic</h4>
   <p class="topless"><a href="memory.html"
                         title="previous chapter">In-Memory Store</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="../sparql.html"
+                        title="next chapter">SPARQL utility objects</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -309,6 +316,9 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
         <li class="right" style="margin-right: 10px">
           <a href="../genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="../sparql.html" title="SPARQL utility objects"
+             >next</a> |</li>
         <li class="right" >
           <a href="memory.html" title="In-Memory Store"
              >previous</a> |</li>
