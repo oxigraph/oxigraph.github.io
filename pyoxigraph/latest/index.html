@@ -46,8 +46,8 @@
 <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/pyoxigraph" />
 <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pyoxigraph" />
 <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pyoxigraph" />
-<p>Pyoxigraph is a graph database library implementing the <a class="reference external" href="https://www.w3.org/TR/sparql11-overview/">SPARQL</a> standard.</p>
-<p>It is built on top of <a class="reference external" href="https://github.com/oxigraph/oxigraph">Oxigraph</a> using <a class="reference external" href="https://pyo3.rs/">PyO3</a> to provides a Python API.</p>
+<p>Pyoxigraph is a Python graph database library implementing the <a class="reference external" href="https://www.w3.org/TR/sparql11-overview/">SPARQL</a> standard.</p>
+<p>It is built on top of <a class="reference external" href="https://github.com/oxigraph/oxigraph">Oxigraph</a> using <a class="reference external" href="https://pyo3.rs/">PyO3</a>.</p>
 <p>It offers two stores with <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL 1.1 Query</a> capabilities.
 One of the store is in-memory, and the other one is disk based.</p>
 <p>It also provides a set of utility functions for reading, writing and processing RDF files in
@@ -57,7 +57,7 @@ One of the store is in-memory, and the other one is disk based.</p>
 <a class="reference external" href="https://www.w3.org/TR/n-quads/">N-Quads</a> and
 <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <p>Pyoxigraph is <a class="reference external" href="https://pypi.org/project/pyoxigraph/">distributed on Pypi</a>.</p>
-<p>There exists also a small library providing <a class="reference external" href="https://rdflib.readthedocs.io">rdflib</a> store using pyoxigraph: <a class="reference external" href="https://github.com/oxigraph/oxrdflib">oxrdflib</a>.</p>
+<p>There exists also a small library providing <a class="reference external" href="https://rdflib.readthedocs.io">rdflib</a> stores using pyoxigraph: <a class="reference external" href="https://github.com/oxigraph/oxrdflib">oxrdflib</a>.</p>
 <p>Oxigraph and pyoxigraph source code are on <a class="reference external" href="https://github.com/oxigraph/oxigraph/tree/master/python">GitHub</a>.</p>
 <div class="section" id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
@@ -71,8 +71,8 @@ One of the store is in-memory, and the other one is disk based.</p>
 
 <span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
 <span class="n">ex</span> <span class="o">=</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example/&#39;</span><span class="p">)</span>
-<span class="n">schemaName</span> <span class="o">=</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://schema.org/name&#39;</span><span class="p">)</span>
-<span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">ex</span><span class="p">,</span> <span class="n">schemaName</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)))</span>
+<span class="n">schema_name</span> <span class="o">=</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://schema.org/name&#39;</span><span class="p">)</span>
+<span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">schema_name</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)))</span>
 <span class="k">for</span> <span class="n">binding</span> <span class="ow">in</span> <span class="n">store</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;SELECT ?name WHERE { &lt;http://example/&gt; &lt;http://schema.org/name&gt; ?name }&#39;</span><span class="p">):</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">binding</span><span class="p">[</span><span class="s1">&#39;name&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value</span><span class="p">)</span>
 </pre></div>
