@@ -272,6 +272,49 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </div>
 </dd></dl>
 
+<dl class="py method">
+<dt id="pyoxigraph.SledStore.update">
+<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">update</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.update" title="Permalink to this definition">¶</a></dt>
+<dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-update/">SPARQL 1.1 update</a>.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>update</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the update to execute</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><ul class="simple">
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SyntaxError" title="(in Python v3.8)"><strong>SyntaxError</strong></a> – if the provided update is invalid</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.8)"><strong>IOError</strong></a> – if an I/O error happens while reading the store</p></li>
+</ul>
+</dd>
+</dl>
+<p>The <a class="reference external" href="https://www.w3.org/TR/sparql11-update/#load">LOAD operation</a> is not supported yet.
+The store does not track the existence of empty named graphs.
+This method has no ACID guarantees.</p>
+<p><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">DATA</span></code> update:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;INSERT DATA { &lt;http://example.com&gt; &lt;http://example.com/p&gt; &quot;1&quot; }&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="go">[&lt;Quad subject=&lt;NamedNode value=http://example.com&gt; predicate=&lt;NamedNode value=http://example.com/p&gt; object=&lt;Literal value=1 datatype=&lt;NamedNode value=http://www.w3.org/2001/XMLSchema#string&gt;&gt; graph_name=&lt;DefaultGraph&gt;&gt;]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">DATA</span></code> update:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;DELETE DATA { &lt;http://example.com&gt; &lt;http://example.com/p&gt; &quot;1&quot; }&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">DELETE</span></code> update:</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;DELETE WHERE { &lt;http://example.com&gt; ?p ?o }&#39;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
 </dd></dl>
 
 </div>
