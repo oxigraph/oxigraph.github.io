@@ -116,7 +116,8 @@
 <em class="property">class </em><code class="sig-prename descclassname">pyoxigraph.</code><code class="sig-name descname">QuerySolution</code><a class="headerlink" href="#pyoxigraph.QuerySolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tuple associating variables and terms that are the result of a SPARQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query.</p>
 <p>It is the equivalent of a row in SQL.</p>
-<p>It could be indexes by variable name (<a class="reference internal" href="#pyoxigraph.Variable" title="pyoxigraph.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) or position in the tuple (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>).</p>
+<p>It could be indexes by variable name (<a class="reference internal" href="#pyoxigraph.Variable" title="pyoxigraph.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) or position in the tuple (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>).
+Unpacking also works.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">SledStore</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span> <span class="o">=</span> <span class="nb">next</span><span class="p">(</span><span class="n">store</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;SELECT ?s ?p ?o WHERE { ?s ?p ?o }&#39;</span><span class="p">))</span>
@@ -125,6 +126,9 @@
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">]</span>
 <span class="go">&lt;NamedNode value=http://example.com&gt;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">solution</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&lt;NamedNode value=http://example.com&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">o</span> <span class="o">=</span> <span class="n">solution</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">s</span>
 <span class="go">&lt;NamedNode value=http://example.com&gt;</span>
 </pre></div>
 </div>
