@@ -51,10 +51,10 @@
 <dd><p>A SPARQL query variable</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the variable name as a string</p>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – the variable name as a string</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the variable name is invalid according to the SPARQL grammar.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – if the variable name is invalid according to the SPARQL grammar.</p>
 </dd>
 </dl>
 <p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with SPARQL:</p>
@@ -70,7 +70,7 @@
 <dd class="field-odd"><p>the variable name</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Variable</span><span class="p">(</span><span class="s2">&quot;foo&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
@@ -102,7 +102,7 @@
 <dd class="field-odd"><p>the ordered list of all variables that could appear in the query results</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)">list</a>(<a class="reference internal" href="#pyoxigraph.Variable" title="pyoxigraph.Variable">Variable</a>)</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.9)">list</a>(<a class="reference internal" href="#pyoxigraph.Variable" title="pyoxigraph.Variable">Variable</a>)</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">SledStore</span><span class="p">()</span>
@@ -119,7 +119,7 @@
 <em class="property">class </em><code class="sig-prename descclassname">pyoxigraph.</code><code class="sig-name descname">QuerySolution</code><a class="headerlink" href="#pyoxigraph.QuerySolution" title="Permalink to this definition">¶</a></dt>
 <dd><p>Tuple associating variables and terms that are the result of a SPARQL <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query.</p>
 <p>It is the equivalent of a row in SQL.</p>
-<p>It could be indexes by variable name (<a class="reference internal" href="#pyoxigraph.Variable" title="pyoxigraph.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) or position in the tuple (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>).
+<p>It could be indexes by variable name (<a class="reference internal" href="#pyoxigraph.Variable" title="pyoxigraph.Variable"><code class="xref py py-class docutils literal notranslate"><span class="pre">Variable</span></code></a> or <a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">str</span></code></a>) or position in the tuple (<a class="reference external" href="https://docs.python.org/3/library/functions.html#int" title="(in Python v3.9)"><code class="xref py py-class docutils literal notranslate"><span class="pre">int</span></code></a>).
 Unpacking also works.</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">SledStore</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)))</span>

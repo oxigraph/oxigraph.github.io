@@ -55,10 +55,10 @@
 <dd><p>An RDF <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-iri">node identified by an IRI</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the IRI as a string</p>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – the IRI as a string</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the IRI is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc3987">RFC 3987</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – if the IRI is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc3987">RFC 3987</a></p>
 </dd>
 </dl>
 <p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
@@ -74,7 +74,7 @@
 <dd class="field-odd"><p>the named node IRI</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">NamedNode</span><span class="p">(</span><span class="s2">&quot;http://example.com&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
@@ -94,10 +94,10 @@
 <dd><p>An RDF <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node">blank node</a></p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – the <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node-identifier">blank node ID</a> (if not present, a random blank node ID is automatically generated).</p>
+<dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – the <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node-identifier">blank node ID</a> (if not present, a random blank node ID is automatically generated).</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the blank node ID is invalid according to NTriples, Turtle and SPARQL grammars.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – if the blank node ID is invalid according to NTriples, Turtle and SPARQL grammars.</p>
 </dd>
 </dl>
 <p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
@@ -114,7 +114,7 @@
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">BlankNode</span><span class="p">(</span><span class="s2">&quot;ex&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
@@ -135,13 +135,13 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a>) – the literal value or <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-lexical-form">lexical form</a></p></li>
+<li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – the literal value or <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-lexical-form">lexical form</a></p></li>
 <li><p><strong>datatype</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em>, </em><em>optional</em>) – the literal <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-datatype-iri">datatype IRI</a>.</p></li>
-<li><p><strong>language</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)"><em>str</em></a><em>, </em><em>optional</em>) – the literal <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-language-tag">language tag</a></p></li>
+<li><p><strong>language</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em>, </em><em>optional</em>) – the literal <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-language-tag">language tag</a></p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.8)"><strong>ValueError</strong></a> – if the language tag is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc5646">RFC 5646</a> (<a class="reference external" href="https://tools.ietf.org/rfc/bcp/bcp47">BCP 47</a>)</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – if the language tag is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc5646">RFC 5646</a> (<a class="reference external" href="https://tools.ietf.org/rfc/bcp/bcp47">BCP 47</a>)</p>
 </dd>
 </dl>
 <p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
@@ -184,7 +184,7 @@
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)">None</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)">None</a></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">language</span>
@@ -203,7 +203,7 @@
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.8)">str</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)">str</a></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Literal</span><span class="p">(</span><span class="s2">&quot;example&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">value</span>
@@ -306,7 +306,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a>) – the quad subject</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a>) – the quad predicate</p></li>
 <li><p><strong>object</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal"><em>Literal</em></a>) – the quad object</p></li>
-<li><p><strong>graph</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.8)"><em>None</em></a><em>, </em><em>optional</em>) – the quad graph name. If not present, the default graph is assumed.</p></li>
+<li><p><strong>graph</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>, </em><em>optional</em>) – the quad graph name. If not present, the default graph is assumed.</p></li>
 </ul>
 </dd>
 </dl>
