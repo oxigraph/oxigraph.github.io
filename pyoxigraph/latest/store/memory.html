@@ -80,7 +80,7 @@ It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-con
 <dd><p>Adds a named graph to the store</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="../model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="../model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a>) – the quad to add</p>
+<dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="../model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="../model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a>) – the name of the name graph to add</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
@@ -171,6 +171,14 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dt id="pyoxigraph.MemoryStore.named_graphs">
 <code class="sig-name descname">named_graphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.named_graphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator over all the store named graphs</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>an iterator of the store graph names</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>iter(<a class="reference internal" href="../model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="../model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a>)</p>
+</dd>
+</dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="o">.</span><span class="n">named_graphs</span><span class="p">())</span>
@@ -279,7 +287,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <p>The default graph will not be remove but just cleared.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="../model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="../model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="../model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a>) – the quad to add</p>
+<dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="../model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="../model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="../model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a>) – the name of the name graph to remove</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
@@ -389,7 +397,7 @@ This method has no ACID guarantees.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
     </div>
   </body>
 </html>
