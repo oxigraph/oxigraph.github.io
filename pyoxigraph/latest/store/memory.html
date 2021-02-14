@@ -47,7 +47,7 @@
 <h1>In-Memory Store<a class="headerlink" href="#in-memory-store" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt id="pyoxigraph.MemoryStore">
-<em class="property">class </em><code class="sig-prename descclassname">pyoxigraph.</code><code class="sig-name descname">MemoryStore</code><a class="headerlink" href="#pyoxigraph.MemoryStore" title="Permalink to this definition">¶</a></dt>
+<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></code><code class="sig-name descname"><span class="pre">MemoryStore</span></code><a class="headerlink" href="#pyoxigraph.MemoryStore" title="Permalink to this definition">¶</a></dt>
 <dd><p>In-memory store.
 It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">RDF dataset</a> and allows to query it using SPARQL.</p>
 <p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization of the store in NQuads:</p>
@@ -59,7 +59,7 @@ It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-con
 </div>
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.add">
-<code class="sig-name descname">add</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quad</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.add" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a quad to the store</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -76,7 +76,7 @@ It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-con
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.add_graph">
-<code class="sig-name descname">add_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.add_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">add_graph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.add_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a named graph to the store</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -93,7 +93,7 @@ It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-con
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.dump">
-<code class="sig-name descname">dump</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">output</span></em>, <em class="sig-param"><span class="o">/</span></em>, <em class="sig-param"><span class="n">mime_type</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">from_graph</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.dump" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">dump</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.dump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dumps the store quads or triples into a file</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
@@ -130,7 +130,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.load">
-<code class="sig-name descname">load</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span></em>, <em class="sig-param"><span class="o">/</span></em>, <em class="sig-param"><span class="n">mime_type</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">base_iri</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">to_graph</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.load" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">load</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads an RDF serialization into the store</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
@@ -169,7 +169,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.named_graphs">
-<code class="sig-name descname">named_graphs</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.named_graphs" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">named_graphs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.named_graphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator over all the store named graphs</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -189,7 +189,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.quads_for_pattern">
-<code class="sig-name descname">quads_for_pattern</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">subject</span></em>, <em class="sig-param"><span class="n">predicate</span></em>, <em class="sig-param"><span class="n">object</span></em>, <em class="sig-param"><span class="n">graph_name</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.quads_for_pattern" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">quads_for_pattern</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.quads_for_pattern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Looks for the quads matching a given pattern</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -217,7 +217,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.query">
-<code class="sig-name descname">query</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">query</span></em>, <em class="sig-param"><span class="o">*</span></em>, <em class="sig-param"><span class="n">use_default_graph_as_union</span></em>, <em class="sig-param"><span class="n">default_graph</span></em>, <em class="sig-param"><span class="n">named_graphs</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.query" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">query</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_graph_as_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_graphs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL 1.1 query</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -263,7 +263,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.remove">
-<code class="sig-name descname">remove</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">quad</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.remove" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a quad from the store</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -282,7 +282,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.remove_graph">
-<code class="sig-name descname">remove_graph</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">graph_name</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.remove_graph" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">remove_graph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.remove_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a graph from the store</p>
 <p>The default graph will not be remove but just cleared.</p>
 <dl class="field-list simple">
@@ -301,7 +301,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt id="pyoxigraph.MemoryStore.update">
-<code class="sig-name descname">update</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">update</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.update" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.MemoryStore.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-update/">SPARQL 1.1 update</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -397,7 +397,7 @@ This method has no ACID guarantees.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.4.3.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.0.
     </div>
   </body>
 </html>
