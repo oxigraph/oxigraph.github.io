@@ -4,12 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>Disk-based Store &#8212; pyoxigraph 0.2.4 documentation</title>
-    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="../_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
     <script src="../_static/underscore.js"></script>
     <script src="../_static/doctools.js"></script>
@@ -43,11 +44,11 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="disk-based-store">
+  <section id="disk-based-store">
 <h1>Disk-based Store<a class="headerlink" href="#disk-based-store" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
-<dt id="pyoxigraph.SledStore">
-<em class="property"><span class="pre">class</span> </em><code class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></code><code class="sig-name descname"><span class="pre">SledStore</span></code><a class="headerlink" href="#pyoxigraph.SledStore" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore">
+<em class="property"><span class="pre">class</span> </em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">SledStore</span></span><a class="headerlink" href="#pyoxigraph.SledStore" title="Permalink to this definition">¶</a></dt>
 <dd><p>Store based on the <a class="reference external" href="https://sled.rs/">Sled</a> key-value database.</p>
 <p>In-memory store.
 It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">RDF dataset</a> and allows to query it using SPARQL.</p>
@@ -68,8 +69,8 @@ It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-con
 </pre></div>
 </div>
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.add">
-<code class="sig-name descname"><span class="pre">add</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.add" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.add">
+<span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a quad to the store</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -88,8 +89,8 @@ It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-con
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.add_graph">
-<code class="sig-name descname"><span class="pre">add_graph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.add_graph" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.add_graph">
+<span class="sig-name descname"><span class="pre">add_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.add_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a named graph to the store</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -108,8 +109,8 @@ It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-con
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.dump">
-<code class="sig-name descname"><span class="pre">dump</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.dump" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.dump">
+<span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.dump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dumps the store quads or triples into a file</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
@@ -148,8 +149,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.load">
-<code class="sig-name descname"><span class="pre">load</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.load" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads an RDF serialization into the store</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
@@ -188,8 +189,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.named_graphs">
-<code class="sig-name descname"><span class="pre">named_graphs</span></code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.named_graphs" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.named_graphs">
+<span class="sig-name descname"><span class="pre">named_graphs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.named_graphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator over all the store named graphs</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -211,8 +212,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.quads_for_pattern">
-<code class="sig-name descname"><span class="pre">quads_for_pattern</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.quads_for_pattern" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.quads_for_pattern">
+<span class="sig-name descname"><span class="pre">quads_for_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.quads_for_pattern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Looks for the quads matching a given pattern</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -242,8 +243,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.query">
-<code class="sig-name descname"><span class="pre">query</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_graph_as_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_graphs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.query" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.query">
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_graph_as_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_graphs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL 1.1 query</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -291,8 +292,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.remove">
-<code class="sig-name descname"><span class="pre">remove</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.remove" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.remove">
+<span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a quad from the store</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -313,8 +314,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.remove_graph">
-<code class="sig-name descname"><span class="pre">remove_graph</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.remove_graph" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.remove_graph">
+<span class="sig-name descname"><span class="pre">remove_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.remove_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a graph from the store</p>
 <p>The default graph will not be remove but just cleared.</p>
 <dl class="field-list simple">
@@ -335,8 +336,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
-<dt id="pyoxigraph.SledStore.update">
-<code class="sig-name descname"><span class="pre">update</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.update" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.SledStore.update">
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.SledStore.update" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-update/">SPARQL 1.1 update</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -378,7 +379,7 @@ This method has no ACID guarantees.</p>
 
 </dd></dl>
 
-</div>
+</section>
 
 
             <div class="clearer"></div>
@@ -435,7 +436,7 @@ This method has no ACID guarantees.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>

@@ -4,12 +4,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
     <title>RDF Parsing and Serialization &#8212; pyoxigraph 0.2.4 documentation</title>
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/classic.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
-    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
     <script src="_static/doctools.js"></script>
@@ -43,14 +44,14 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <div class="section" id="rdf-parsing-and-serialization">
+  <section id="rdf-parsing-and-serialization">
 <h1>RDF Parsing and Serialization<a class="headerlink" href="#rdf-parsing-and-serialization" title="Permalink to this headline">¶</a></h1>
 <p>Oxigraph provides functions to parse and serialize RDF files:</p>
-<div class="section" id="parsing">
+<section id="parsing">
 <h2>Parsing<a class="headerlink" href="#parsing" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="pyoxigraph.parse">
-<code class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></code><code class="sig-name descname"><span class="pre">parse</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.parse" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.parse">
+<span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.parse" title="Permalink to this definition">¶</a></dt>
 <dd><p>Parses RDF graph and dataset serialization formats</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
@@ -91,12 +92,12 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </div>
 </dd></dl>
 
-</div>
-<div class="section" id="serialization">
+</section>
+<section id="serialization">
 <h2>Serialization<a class="headerlink" href="#serialization" title="Permalink to this headline">¶</a></h2>
 <dl class="py function">
-<dt id="pyoxigraph.serialize">
-<code class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></code><code class="sig-name descname"><span class="pre">serialize</span></code><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.serialize" title="Permalink to this definition">¶</a></dt>
+<dt class="sig sig-object py" id="pyoxigraph.serialize">
+<span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.serialize" title="Permalink to this definition">¶</a></dt>
 <dd><p>Serializes an RDF graph or dataset</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
@@ -132,8 +133,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </div>
 </dd></dl>
 
-</div>
-</div>
+</section>
+</section>
 
 
             <div class="clearer"></div>
@@ -199,7 +200,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 3.5.4.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.1.
     </div>
   </body>
 </html>
