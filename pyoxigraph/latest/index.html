@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>pyoxigraph 0.2.5 &#8212; pyoxigraph 0.2.5 documentation</title>
+    <title>pyoxigraph 0.3.0-dev &#8212; pyoxigraph 0.3.0-dev documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -30,8 +30,8 @@
         <li class="right" >
           <a href="model.html" title="RDF Model"
              accesskey="N">next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">pyoxigraph 0.2.5 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">pyoxigraph 0.2.5</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">pyoxigraph 0.3.0-dev documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyoxigraph 0.3.0-dev</a></li> 
       </ul>
     </div>  
 
@@ -41,15 +41,13 @@
           <div class="body" role="main">
             
   <section id="pyoxigraph-release">
-<h1>pyoxigraph 0.2.5<a class="headerlink" href="#pyoxigraph-release" title="Permalink to this headline">¶</a></h1>
+<h1>pyoxigraph 0.3.0-dev<a class="headerlink" href="#pyoxigraph-release" title="Permalink to this headline">¶</a></h1>
 <a class="reference external image-reference" href="https://pypi.org/project/pyoxigraph/"><img alt="PyPI" src="https://img.shields.io/pypi/v/pyoxigraph" /></a>
 <img alt="PyPI - Implementation" src="https://img.shields.io/pypi/implementation/pyoxigraph" />
 <img alt="PyPI - Python Version" src="https://img.shields.io/pypi/pyversions/pyoxigraph" />
 <img alt="PyPI - License" src="https://img.shields.io/pypi/l/pyoxigraph" />
 <p>Pyoxigraph is a Python graph database library implementing the <a class="reference external" href="https://www.w3.org/TR/sparql11-overview/">SPARQL</a> standard.</p>
 <p>It is built on top of <a class="reference external" href="https://crates.io/crates/oxigraph">Oxigraph</a> using <a class="reference external" href="https://pyo3.rs/">PyO3</a>.</p>
-<p>It offers two stores with <a class="reference external" href="https://www.w3.org/TR/sparql11-overview/">SPARQL 1.1</a> capabilities.
-One of the store is in-memory, and the other one is disk based.</p>
 <p>It also provides a set of utility functions for reading, writing and processing RDF files in
 <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>,
 <a class="reference external" href="https://www.w3.org/TR/trig/">TriG</a>,
@@ -57,7 +55,7 @@ One of the store is in-memory, and the other one is disk based.</p>
 <a class="reference external" href="https://www.w3.org/TR/n-quads/">N-Quads</a> and
 <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <p>Pyoxigraph is <a class="reference external" href="https://pypi.org/project/pyoxigraph/">distributed on Pypi</a>.</p>
-<p>There exists also a small library providing <a class="reference external" href="https://rdflib.readthedocs.io">rdflib</a> stores using pyoxigraph: <a class="reference external" href="https://github.com/oxigraph/oxrdflib">oxrdflib</a>.</p>
+<p>There is also a small library providing an <a class="reference external" href="https://rdflib.readthedocs.io">rdflib</a> store using pyoxigraph: <a class="reference external" href="https://github.com/oxigraph/oxrdflib">oxrdflib</a>.</p>
 <p>Oxigraph and pyoxigraph source code are on <a class="reference external" href="https://github.com/oxigraph/oxigraph/tree/master/python">GitHub</a>.</p>
 <section id="installation">
 <h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
@@ -69,7 +67,7 @@ One of the store is in-memory, and the other one is disk based.</p>
 <p>Insert the triple <code class="docutils literal notranslate"><span class="pre">&lt;http://example/&gt;</span> <span class="pre">&lt;http://schema.org/name&gt;</span> <span class="pre">&quot;example&quot;</span></code> and print the name of <code class="docutils literal notranslate"><span class="pre">&lt;http://example/&gt;</span></code> in SPARQL:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyoxigraph</span> <span class="kn">import</span> <span class="o">*</span>
 
-<span class="n">store</span> <span class="o">=</span> <span class="n">MemoryStore</span><span class="p">()</span>
+<span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">()</span>
 <span class="n">ex</span> <span class="o">=</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example/&#39;</span><span class="p">)</span>
 <span class="n">schema_name</span> <span class="o">=</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://schema.org/name&#39;</span><span class="p">)</span>
 <span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">ex</span><span class="p">,</span> <span class="n">schema_name</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">)))</span>
@@ -95,8 +93,7 @@ One of the store is in-memory, and the other one is disk based.</p>
 <li class="toctree-l2"><a class="reference internal" href="io.html#serialization">Serialization</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="store/memory.html">In-Memory Store</a></li>
-<li class="toctree-l1"><a class="reference internal" href="store/sled.html">Disk-based Store</a></li>
+<li class="toctree-l1"><a class="reference internal" href="store.html">Disk-based RDF Store</a></li>
 <li class="toctree-l1"><a class="reference internal" href="sparql.html">SPARQL utility objects</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="sparql.html#variable">Variable</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sparql.html#select-solutions"><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> solutions</a></li>
@@ -120,7 +117,7 @@ One of the store is in-memory, and the other one is disk based.</p>
             </a></p>
   <h3><a href="#">Table of Contents</a></h3>
   <ul>
-<li><a class="reference internal" href="#">pyoxigraph 0.2.5</a><ul>
+<li><a class="reference internal" href="#">pyoxigraph 0.3.0-dev</a><ul>
 <li><a class="reference internal" href="#installation">Installation</a></li>
 <li><a class="reference internal" href="#example">Example</a></li>
 <li><a class="reference internal" href="#table-of-contents">Table of contents</a></li>
@@ -161,13 +158,13 @@ One of the store is in-memory, and the other one is disk based.</p>
         <li class="right" >
           <a href="model.html" title="RDF Model"
              >next</a> |</li>
-        <li class="nav-item nav-item-0"><a href="#">pyoxigraph 0.2.5 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">pyoxigraph 0.2.5</a></li> 
+        <li class="nav-item nav-item-0"><a href="#">pyoxigraph 0.3.0-dev documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">pyoxigraph 0.3.0-dev</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2021, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.1.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.1.
     </div>
   </body>
 </html>
