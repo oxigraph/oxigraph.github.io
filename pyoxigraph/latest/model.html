@@ -184,7 +184,7 @@
 </p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a> or <a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)">None</a></p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a> or None</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">language</span>
@@ -306,7 +306,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a>) – the quad subject.</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a>) – the quad predicate.</p></li>
 <li><p><strong>object</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal"><em>Literal</em></a>) – the quad object.</p></li>
-<li><p><strong>graph</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><em>None</em></a><em>, </em><em>optional</em>) – the quad graph name. If not present, the default graph is assumed.</p></li>
+<li><p><strong>graph</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the quad graph name. If not present, the default graph is assumed.</p></li>
 </ul>
 </dd>
 </dl>
@@ -429,8 +429,9 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/logo.svg" alt="Logo"/>
             </a></p>
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">RDF Model</a><ul>
 <li><a class="reference internal" href="#id1">IRIs</a></li>
 <li><a class="reference internal" href="#id2">Blank Nodes</a></li>
@@ -441,12 +442,17 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="index.html"
-                        title="previous chapter">pyoxigraph 0.3.0-dev</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="io.html"
-                        title="next chapter">RDF Parsing and Serialization</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="index.html"
+                          title="previous chapter">pyoxigraph 0.3.0-dev</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="io.html"
+                          title="next chapter">RDF Parsing and Serialization</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -486,7 +492,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>

@@ -69,7 +69,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a>) – The binary I/O object to read from. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
-<li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.10)"><em>None</em></a><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
+<li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
@@ -146,8 +146,9 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/logo.svg" alt="Logo"/>
             </a></p>
-  <h3><a href="index.html">Table of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">RDF Parsing and Serialization</a><ul>
 <li><a class="reference internal" href="#parsing">Parsing</a></li>
 <li><a class="reference internal" href="#serialization">Serialization</a></li>
@@ -155,12 +156,17 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
-  <p class="topless"><a href="model.html"
-                        title="previous chapter">RDF Model</a></p>
-  <h4>Next topic</h4>
-  <p class="topless"><a href="store.html"
-                        title="next chapter">Disk-based RDF Store</a></p>
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="model.html"
+                          title="previous chapter">RDF Model</a></p>
+  </div>
+  <div>
+    <h4>Next topic</h4>
+    <p class="topless"><a href="store.html"
+                          title="next chapter">Disk-based RDF Store</a></p>
+  </div>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -200,7 +206,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.3.2.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
     </div>
   </body>
 </html>
