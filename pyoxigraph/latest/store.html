@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>Disk-based RDF Store &#8212; pyoxigraph 0.3.0-dev documentation</title>
+    <title>RDF Store &#8212; pyoxigraph 0.3.0-dev documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -35,7 +35,7 @@
           <a href="io.html" title="RDF Parsing and Serialization"
              accesskey="P">previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-dev documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Disk-based RDF Store</a></li> 
+        <li class="nav-item nav-item-this"><a href="">RDF Store</a></li> 
       </ul>
     </div>  
 
@@ -44,12 +44,12 @@
         <div class="bodywrapper">
           <div class="body" role="main">
             
-  <section id="disk-based-rdf-store">
-<h1>Disk-based RDF Store<a class="headerlink" href="#disk-based-rdf-store" title="Permalink to this headline">¶</a></h1>
+  <section id="rdf-store">
+<h1>RDF Store<a class="headerlink" href="#rdf-store" title="Permalink to this headline">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.Store">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">Store</span></span><a class="headerlink" href="#pyoxigraph.Store" title="Permalink to this definition">¶</a></dt>
-<dd><p>Disk-based RDF store.</p>
+<dd><p>RDF store.</p>
 <p>It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">RDF dataset</a> and allows to query it using SPARQL.
 It is based on the <a class="reference external" href="https://rocksdb.org/">RocksDB</a> key-value database.</p>
 <p>This store ensure the “repeatable read” isolation level: the store only exposes changes that have
@@ -57,7 +57,9 @@ been “committed” (i.e. no partial writes) and the exposed state does not cha
 of a read operation (e.g. a SPARQL query) or a read/write operation (e.g. a SPARQL update).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional.</em>) – the path of the directory in which the store should read and write its data. If the directory does not exist, it is created. If no directory is provided a temporary one is created and removed when the Python garbage collector removes the store.</p>
+<dd class="field-odd"><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional.</em>) – the path of the directory in which the store should read and write its data. If the directory does not exist, it is created.
+If no directory is provided a temporary one is created and removed when the Python garbage collector removes the store.
+In this case the store data are kept in memory and never written on disk.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if the target directory contains invalid data or could not be accessed.</p>
@@ -111,10 +113,34 @@ of a read operation (e.g. a SPARQL query) or a read/write operation (e.g. a SPAR
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyoxigraph.Store.backup">
+<span class="sig-name descname"><span class="pre">backup</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">target_directory</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.backup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Creates database backup into the <cite>target_directory</cite>.</p>
+<p>After its creation, the backup is usable using <a class="reference internal" href="#pyoxigraph.Store" title="pyoxigraph.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">Store</span></code></a> constructor.
+like a regular pyxigraph database and operates independently from the original database.</p>
+<p>Warning: Backups are only possible for on-disk databases created by providing a path to <a class="reference internal" href="#pyoxigraph.Store" title="pyoxigraph.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">Store</span></code></a> constructor.
+Temporary in-memory databases created without path are not compatible with the backup system.</p>
+<p>Warning: An error is raised if the <code class="docutils literal notranslate"><span class="pre">target_directory</span></code> already exists.</p>
+<p>If the target directory is in the same file system as the current database,
+the database content will not be fully copied
+but hard links will be used to point to the original database immutable snapshots.
+This allows cheap regular backups.</p>
+<p>If you want to move your data to an other RDF storage system, you should have a look at the <code class="xref py py-func docutils literal notranslate"><span class="pre">dump_dataset()</span></code> function instead.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>target_directory</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the name of directory to save the database to.</p>
+</dd>
+<dt class="field-even">Raises</dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the backup.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyoxigraph.Store.bulk_load">
 <span class="sig-name descname"><span class="pre">bulk_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.bulk_load" title="Permalink to this definition">¶</a></dt>
 <dd><p>Loads an RDF serialization into the store.</p>
-<p>This function is designed to be as fast as possible on big files without transactional guarantees.
+<p>This function is designed to be as fast as possible on big files <strong>without</strong> transactional guarantees.
 If the file is invalid only a piece of it might be written to the store.</p>
 <p>The <a class="reference internal" href="#pyoxigraph.Store.load" title="pyoxigraph.Store.load"><code class="xref py py-func docutils literal notranslate"><span class="pre">load()</span></code></a> method is also available for loads with transactional guarantees.</p>
 <p>It currently supports the following formats:</p>
@@ -488,7 +514,7 @@ This method has no ACID guarantees.</p>
           <a href="io.html" title="RDF Parsing and Serialization"
              >previous</a> |</li>
         <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-dev documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">Disk-based RDF Store</a></li> 
+        <li class="nav-item nav-item-this"><a href="">RDF Store</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
