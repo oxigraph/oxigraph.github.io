@@ -429,8 +429,6 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </ul>
 </dd>
 </dl>
-<p>The store does not track the existence of empty named graphs.
-This method has no ACID guarantees.</p>
 <p><code class="docutils literal notranslate"><span class="pre">INSERT</span> <span class="pre">DATA</span></code> update:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="s1">&#39;INSERT DATA { &lt;http://example.com&gt; &lt;http://example.com/p&gt; &quot;1&quot; }&#39;</span><span class="p">)</span>

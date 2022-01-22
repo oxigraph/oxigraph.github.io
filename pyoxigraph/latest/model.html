@@ -216,7 +216,7 @@
 
 </section>
 <section id="id8">
-<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">Triple</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">Triples</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.Triple">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">Triple</span></span><a class="headerlink" href="#pyoxigraph.Triple" title="Permalink to this definition">¶</a></dt>
@@ -224,9 +224,9 @@
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a>) – the triple subject.</p></li>
+<li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple"><em>Triple</em></a>) – the triple subject.</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a>) – the triple predicate.</p></li>
-<li><p><strong>object</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal"><em>Literal</em></a>) – the triple object.</p></li>
+<li><p><strong>object</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal"><em>Literal</em></a><em> or </em><em>Triple</em>) – the triple object.</p></li>
 </ul>
 </dd>
 </dl>
@@ -247,7 +247,7 @@
 <dd class="field-odd"><p>the triple object.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal">Literal</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal">Literal</a> or Triple</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Triple</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">object</span>
@@ -281,7 +281,7 @@
 <dd class="field-odd"><p>the triple subject.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple">Triple</a></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Triple</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">subject</span>
@@ -303,9 +303,9 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a>) – the quad subject.</p></li>
+<li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple"><em>Triple</em></a>) – the quad subject.</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a>) – the quad predicate.</p></li>
-<li><p><strong>object</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal"><em>Literal</em></a>) – the quad object.</p></li>
+<li><p><strong>object</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal"><em>Literal</em></a><em> or </em><em>Triple</em>) – the quad object.</p></li>
 <li><p><strong>graph</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the quad graph name. If not present, the default graph is assumed.</p></li>
 </ul>
 </dd>
@@ -348,7 +348,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dd class="field-odd"><p>the quad object.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal">Literal</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal">Literal</a> or Triple</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">object</span>
@@ -382,7 +382,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dd class="field-odd"><p>the quad subject.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a></p>
+<dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple">Triple</a></p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">subject</span>
@@ -436,7 +436,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <li><a class="reference internal" href="#id1">IRIs</a></li>
 <li><a class="reference internal" href="#id2">Blank Nodes</a></li>
 <li><a class="reference internal" href="#id4">Literals</a></li>
-<li><a class="reference internal" href="#id8">Triple</a></li>
+<li><a class="reference internal" href="#id8">Triples</a></li>
 <li><a class="reference internal" href="#quads-triples-in-a-rdf-dataset">Quads (triples in a RDF dataset)</a></li>
 </ul>
 </li>
