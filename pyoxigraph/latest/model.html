@@ -61,7 +61,7 @@
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the IRI is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc3987">RFC 3987</a>.</p>
 </dd>
 </dl>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle, and SPARQL:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">))</span>
 <span class="go">&#39;&lt;http://example.com&gt;&#39;</span>
 </pre></div>
@@ -97,10 +97,10 @@
 <dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – the <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node-identifier">blank node ID</a> (if not present, a random blank node ID is automatically generated).</p>
 </dd>
 <dt class="field-even">Raises</dt>
-<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the blank node ID is invalid according to NTriples, Turtle and SPARQL grammars.</p>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the blank node ID is invalid according to NTriples, Turtle, and SPARQL grammars.</p>
 </dd>
 </dl>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle, and SPARQL:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">BlankNode</span><span class="p">(</span><span class="s1">&#39;ex&#39;</span><span class="p">))</span>
 <span class="go">&#39;_:ex&#39;</span>
 </pre></div>
@@ -144,7 +144,7 @@
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the language tag is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc5646">RFC 5646</a> (<a class="reference external" href="https://tools.ietf.org/rfc/bcp/bcp47">BCP 47</a>).</p>
 </dd>
 </dl>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle, and SPARQL:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">))</span>
 <span class="go">&#39;&quot;example&quot;&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;example&#39;</span><span class="p">,</span> <span class="n">language</span><span class="o">=</span><span class="s1">&#39;en&#39;</span><span class="p">))</span>
@@ -230,7 +230,7 @@
 </ul>
 </dd>
 </dl>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle, and SPARQL:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">Triple</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)))</span>
 <span class="go">&#39;&lt;http://example.com&gt; &lt;http://example.com/p&gt; &quot;1&quot;&#39;</span>
 </pre></div>
@@ -310,7 +310,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 </ul>
 </dd>
 </dl>
-<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle and SPARQL:</p>
+<p>The <code class="xref py py-func docutils literal notranslate"><span class="pre">str()</span></code> function provides a serialization compatible with NTriples, Turtle, and SPARQL:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">str</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">)))</span>
 <span class="go">&#39;&lt;http://example.com&gt; &lt;http://example.com/p&gt; &quot;1&quot; &lt;http://example.com/g&gt;&#39;</span>
 </pre></div>

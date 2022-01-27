@@ -52,14 +52,14 @@
 <dd><p>RDF store.</p>
 <p>It encodes a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">RDF dataset</a> and allows to query it using SPARQL.
 It is based on the <a class="reference external" href="https://rocksdb.org/">RocksDB</a> key-value database.</p>
-<p>This store ensure the “repeatable read” isolation level: the store only exposes changes that have
+<p>This store ensures the “repeatable read” isolation level: the store only exposes changes that have
 been “committed” (i.e. no partial writes) and the exposed state does not change for the complete duration
 of a read operation (e.g. a SPARQL query) or a read/write operation (e.g. a SPARQL update).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional.</em>) – the path of the directory in which the store should read and write its data. If the directory does not exist, it is created.
 If no directory is provided a temporary one is created and removed when the Python garbage collector removes the store.
-In this case the store data are kept in memory and never written on disk.</p>
+In this case, the store data are kept in memory and never written on disk.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if the target directory contains invalid data or could not be accessed.</p>
@@ -125,10 +125,10 @@ Temporary in-memory databases created without path are not compatible with the b
 the database content will not be fully copied
 but hard links will be used to point to the original database immutable snapshots.
 This allows cheap regular backups.</p>
-<p>If you want to move your data to an other RDF storage system, you should have a look at the <code class="xref py py-func docutils literal notranslate"><span class="pre">dump_dataset()</span></code> function instead.</p>
+<p>If you want to move your data to another RDF storage system, you should have a look at the <code class="xref py py-func docutils literal notranslate"><span class="pre">dump_dataset()</span></code> function instead.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>target_directory</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the name of directory to save the database to.</p>
+<dd class="field-odd"><p><strong>target_directory</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the directory name to save the database to.</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the backup.</p>
@@ -152,7 +152,7 @@ If the file is invalid only a piece of it might be written to the store.</p>
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> (<code class="docutils literal notranslate"><span class="pre">application/rdf+xml</span></code>)</p></li>
 </ul>
 <p>It supports also some MIME type aliases.
-For example <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
+For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -160,7 +160,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a>) – The binary I/O object to read from. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
 <li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
-<li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which store the triples. By default, the default graph is used.</p></li>
+<li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which the triples should be stored. By default, the default graph is used.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -192,7 +192,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> (<code class="docutils literal notranslate"><span class="pre">application/rdf+xml</span></code>)</p></li>
 </ul>
 <p>It supports also some MIME type aliases.
-For example <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
+For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -235,7 +235,7 @@ The <a class="reference internal" href="#pyoxigraph.Store.bulk_load" title="pyox
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> (<code class="docutils literal notranslate"><span class="pre">application/rdf+xml</span></code>)</p></li>
 </ul>
 <p>It supports also some MIME type aliases.
-For example <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
+For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -243,7 +243,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a>) – The binary I/O object to read from. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
 <li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
-<li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which store the triples. By default, the default graph is used.</p></li>
+<li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which the triples should be stored. By default, the default graph is used.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
@@ -392,7 +392,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dt class="sig sig-object py" id="pyoxigraph.Store.remove_graph">
 <span class="sig-name descname"><span class="pre">remove_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.remove_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a graph from the store.</p>
-<p>The default graph will not be remove but just cleared.</p>
+<p>The default graph will not be removed but just cleared.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a>) – the name of the name graph to remove.</p>
