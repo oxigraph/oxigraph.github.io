@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>RDF Store &#8212; pyoxigraph 0.3.0-beta.3 documentation</title>
+    <title>RDF Store &#8212; pyoxigraph 0.3.0-beta.4 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -34,7 +34,7 @@
         <li class="right" >
           <a href="io.html" title="RDF Parsing and Serialization"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.4 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">RDF Store</a></li> 
       </ul>
     </div>  
@@ -157,7 +157,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a>) – The binary I/O object to read from. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
+<li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to read from. For example, it could be a file path as a string or a file reader opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
 <li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
 <li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which the triples should be stored. By default, the default graph is used.</p></li>
@@ -197,7 +197,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>output</strong> – The binary I/O object to write to. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'wb')</span></code>.</p></li>
+<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to write to. For example, it could be a file path as a string or a file writer opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'wb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
 <li><p><strong>from_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if a triple based format is requested, the store graph from which dump the triples. By default, the default graph is used.</p></li>
 </ul>
@@ -240,7 +240,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a>) – The binary I/O object to read from. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
+<li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to read from. For example, it could be a file path as a string or a file reader opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
 <li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
 <li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which the triples should be stored. By default, the default graph is used.</p></li>
@@ -511,7 +511,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
         <li class="right" >
           <a href="io.html" title="RDF Parsing and Serialization"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.3 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.4 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">RDF Store</a></li> 
       </ul>
     </div>
