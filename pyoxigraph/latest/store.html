@@ -180,6 +180,46 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd></dl>
 
 <dl class="py method">
+<dt class="sig sig-object py" id="pyoxigraph.Store.clear">
+<span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.clear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears the store by removing all its contents.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the operation.</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">clear</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="o">.</span><span class="n">named_graphs</span><span class="p">())</span>
+<span class="go">[]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyoxigraph.Store.clear_graph">
+<span class="sig-name descname"><span class="pre">clear_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.clear_graph" title="Permalink to this definition">¶</a></dt>
+<dd><p>Clears a graph from the store without removing it.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the operation.</p>
+</dd>
+</dl>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">()</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">)))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">clear_graph</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="go">[]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="o">.</span><span class="n">named_graphs</span><span class="p">())</span>
+<span class="go">[&lt;NamedNode value=http://example.com/g&gt;]</span>
+</pre></div>
+</div>
+</dd></dl>
+
+<dl class="py method">
 <dt class="sig sig-object py" id="pyoxigraph.Store.dump">
 <span class="sig-name descname"><span class="pre">dump</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">from_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.dump" title="Permalink to this definition">¶</a></dt>
 <dd><p>Dumps the store quads or triples into a file.</p>
@@ -217,6 +257,18 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="go">b&#39;&lt;http://example.com&gt; &lt;http://example.com/p&gt; &quot;1&quot; .\n&#39;</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyoxigraph.Store.flush">
+<span class="sig-name descname"><span class="pre">flush</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.flush" title="Permalink to this definition">¶</a></dt>
+<dd><p>Flushes all buffers and ensures that all writes are saved on disk.</p>
+<p>Flushes are automatically done using background threads but might lag a little bit.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the flush.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -283,6 +335,18 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="go">[&lt;NamedNode value=http://example.com/g&gt;]</span>
 </pre></div>
 </div>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pyoxigraph.Store.optimize">
+<span class="sig-name descname"><span class="pre">optimize</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.optimize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Optimizes the database for future workload.</p>
+<p>Useful to call after a batch upload or another similar operation.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Raises</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the optimization.</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="py method">
@@ -402,9 +466,9 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">()</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">quad</span> <span class="o">=</span> <span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">)))</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">remove_graph</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/g&#39;</span><span class="p">))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">store</span><span class="o">.</span><span class="n">named_graphs</span><span class="p">())</span>
 <span class="go">[]</span>
 </pre></div>
 </div>
