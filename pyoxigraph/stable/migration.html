@@ -1,0 +1,140 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>Migration Guide &#8212; pyoxigraph 0.3.0-beta.4 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
+    
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    
+    <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/migration.html" />
+    <link rel="shortcut icon" href="_static/logo.svg"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="SPARQL utility objects" href="sparql.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="sparql.html" title="SPARQL utility objects"
+             accesskey="P">previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Migration Guide</a></li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body" role="main">
+            
+  <section id="migration-guide">
+<h1>Migration Guide<a class="headerlink" href="#migration-guide" title="Permalink to this headline">¶</a></h1>
+<section id="from-0-2-to-0-3">
+<h2>From 0.2 to 0.3<a class="headerlink" href="#from-0-2-to-0-3" title="Permalink to this headline">¶</a></h2>
+<ul>
+<li><p>Python 3.6 and <code class="docutils literal notranslate"><span class="pre">manylinux2010</span></code> (<a class="reference external" href="https://www.python.org/dev/peps/pep-0571/">PEP 571</a>) support have been removed. The new minimal versions are Python 3.7 and <code class="docutils literal notranslate"><span class="pre">manylinux2014</span></code> (<a class="reference external" href="https://www.python.org/dev/peps/pep-0599/">PEP 599</a>).</p></li>
+<li><p>The on-disk storage system has been rebuilt on top of <a class="reference external" href="http://rocksdb.org/">RocksDB</a>.
+It is now implemented by the <a class="reference internal" href="store.html#pyoxigraph.Store" title="pyoxigraph.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">Store</span></code></a> class that keeps the same API as the late <code class="xref py py-class docutils literal notranslate"><span class="pre">SledStore</span></code> class.</p>
+<p>To migrate you have to dump the store content using pyoxigraph <strong>0.2</strong> and the following code:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyoxigraph</span> <span class="kn">import</span> <span class="n">SledStore</span>
+<span class="n">store</span> <span class="o">=</span> <span class="n">SledStore</span><span class="p">(</span><span class="s1">&#39;MY_STORAGE_PATH&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temp_file.nq&#39;</span><span class="p">,</span> <span class="s1">&#39;wb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">store</span><span class="o">.</span><span class="n">dump</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s2">&quot;application/n-quads&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>And then upgrade to pyoxigraph <strong>0.3</strong> and run:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pyoxigraph</span> <span class="kn">import</span> <span class="n">Store</span>
+<span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">(</span><span class="s1">&#39;MY_NEW_STORAGE_PATH&#39;</span><span class="p">)</span>
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;temp_file.nq&#39;</span><span class="p">,</span> <span class="s1">&#39;rb&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">fp</span><span class="p">:</span>
+    <span class="n">store</span><span class="o">.</span><span class="n">bulk_load</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="s2">&quot;application/n-quads&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</li>
+<li><p>The in-memory storage class <code class="xref py py-class docutils literal notranslate"><span class="pre">MemoryStore</span></code> has been merged into the <a class="reference internal" href="store.html#pyoxigraph.Store" title="pyoxigraph.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">Store</span></code></a> class that provides the exact same API as the late <code class="xref py py-class docutils literal notranslate"><span class="pre">MemoryStore</span></code>.
+On platforms other than Linux, a temporary directory is created when opening the <a class="reference internal" href="store.html#pyoxigraph.Store" title="pyoxigraph.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">Store</span></code></a> and automatically removed when it is garbage collected. No data is written in this directory.</p></li>
+<li><p><a class="reference internal" href="store.html#pyoxigraph.Store" title="pyoxigraph.Store"><code class="xref py py-class docutils literal notranslate"><span class="pre">Store</span></code></a> operations are now transactional using the “repeatable read” isolation level:
+the store only exposes changes that have been “committed” (i.e. no partial writes)
+and the exposed state does not change for the complete duration of a read operation (e.g. a SPARQL query) or a read/write operation (e.g. a SPARQL update).</p></li>
+<li><p><a class="reference external" href="https://w3c.github.io/rdf-star/cg-spec">RDF-star</a> is now supported (including serialization formats and SPARQL-star). <a class="reference internal" href="model.html#pyoxigraph.Triple" title="pyoxigraph.Triple"><code class="xref py py-class docutils literal notranslate"><span class="pre">Triple</span></code></a> can now be used in <a class="reference internal" href="model.html#pyoxigraph.Triple.object" title="pyoxigraph.Triple.object"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Triple.object</span></code></a>, <a class="reference internal" href="model.html#pyoxigraph.Triple.object" title="pyoxigraph.Triple.object"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Triple.object</span></code></a>, <a class="reference internal" href="model.html#pyoxigraph.Quad.subject" title="pyoxigraph.Quad.subject"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Quad.subject</span></code></a> and <a class="reference internal" href="model.html#pyoxigraph.Quad.object" title="pyoxigraph.Quad.object"><code class="xref py py-attr docutils literal notranslate"><span class="pre">Quad.object</span></code></a>.</p></li>
+</ul>
+</section>
+</section>
+
+
+            <div class="clearer"></div>
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+            <p class="logo"><a href="index.html">
+              <img class="logo" src="_static/logo.svg" alt="Logo"/>
+            </a></p>
+  <div>
+    <h3><a href="index.html">Table of Contents</a></h3>
+    <ul>
+<li><a class="reference internal" href="#">Migration Guide</a><ul>
+<li><a class="reference internal" href="#from-0-2-to-0-3">From 0.2 to 0.3</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <div>
+    <h4>Previous topic</h4>
+    <p class="topless"><a href="sparql.html"
+                          title="previous chapter">SPARQL utility objects</a></p>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/migration.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="submit" value="Go" />
+    </form>
+    </div>
+</div>
+<script>$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="sparql.html" title="SPARQL utility objects"
+             >previous</a> |</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">Migration Guide</a></li> 
+      </ul>
+    </div>
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2022, Oxigraph contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+    </div>
+  </body>
+</html>
