@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>RDF Parsing and Serialization &#8212; pyoxigraph 0.3.0-beta.4 documentation</title>
+    <title>RDF Parsing and Serialization &#8212; pyoxigraph 0.2.5 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
@@ -19,7 +19,7 @@
     <link rel="shortcut icon" href="_static/logo.svg"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="RDF Store" href="store.html" />
+    <link rel="next" title="In-Memory Store" href="store/memory.html" />
     <link rel="prev" title="RDF Model" href="model.html" /> 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -29,12 +29,12 @@
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
         <li class="right" >
-          <a href="store.html" title="RDF Store"
+          <a href="store/memory.html" title="In-Memory Store"
              accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="model.html" title="RDF Model"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.2.5 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">RDF Parsing and Serialization</a></li> 
       </ul>
     </div>  
@@ -52,7 +52,7 @@
 <dl class="py function">
 <dt class="sig sig-object py" id="pyoxigraph.parse">
 <span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">parse</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.parse" title="Permalink to this definition">¶</a></dt>
-<dd><p>Parses RDF graph and dataset serialization formats.</p>
+<dd><p>Parses RDF graph and dataset serialization formats</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3.org/TR/n-triples/">N-Triples</a> (<code class="docutils literal notranslate"><span class="pre">application/n-triples</span></code>)</p></li>
@@ -62,26 +62,26 @@
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> (<code class="docutils literal notranslate"><span class="pre">application/rdf+xml</span></code>)</p></li>
 </ul>
 <p>It supports also some MIME type aliases.
-For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
+For example <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to read from. For example, it could be a file path as a string or a file reader opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
-<li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
-<li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
+<li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.9)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.9)"><em>io.BufferedIOBase</em></a>) – The binary I/O object to read from. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
+<li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – the MIME type of the RDF serialization</p></li>
+<li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/constants.html#None" title="(in Python v3.9)"><em>None</em></a><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the file or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>an iterator of RDF triples or quads depending on the format.</p>
+<dd class="field-even"><p>an iterator of RDF triples or quads depending on the format</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>iter(<a class="reference internal" href="model.html#pyoxigraph.Triple" title="pyoxigraph.Triple">Triple</a>) or iter(<a class="reference internal" href="model.html#pyoxigraph.Quad" title="pyoxigraph.Quad">Quad</a>)</p>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the MIME type is not supported.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SyntaxError" title="(in Python v3.10)"><strong>SyntaxError</strong></a> – if the provided data is invalid.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – if the MIME type is not supported</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SyntaxError" title="(in Python v3.9)"><strong>SyntaxError</strong></a> – if the provided data is invalid</p></li>
 </ul>
 </dd>
 </dl>
@@ -98,7 +98,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dl class="py function">
 <dt class="sig sig-object py" id="pyoxigraph.serialize">
 <span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.serialize" title="Permalink to this definition">¶</a></dt>
-<dd><p>Serializes an RDF graph or dataset.</p>
+<dd><p>Serializes an RDF graph or dataset</p>
 <p>It currently supports the following formats:</p>
 <ul class="simple">
 <li><p><a class="reference external" href="https://www.w3.org/TR/n-triples/">N-Triples</a> (<code class="docutils literal notranslate"><span class="pre">application/n-triples</span></code>)</p></li>
@@ -108,20 +108,20 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a> (<code class="docutils literal notranslate"><span class="pre">application/rdf+xml</span></code>)</p></li>
 </ul>
 <p>It supports also some MIME type aliases.
-For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
+For example <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>input</strong> (<em>iter</em><em>(</em><a class="reference internal" href="model.html#pyoxigraph.Triple" title="pyoxigraph.Triple"><em>Triple</em></a><em>) or </em><em>iter</em><em>(</em><a class="reference internal" href="model.html#pyoxigraph.Quad" title="pyoxigraph.Quad"><em>Quad</em></a><em>)</em>) – the RDF triples and quads to serialize.</p></li>
-<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to write to. For example, it could be a file path as a string or a file writer opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'wb')</span></code>.</p></li>
-<li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
+<li><p><strong>input</strong> (<em>iter</em><em>(</em><a class="reference internal" href="model.html#pyoxigraph.Triple" title="pyoxigraph.Triple"><em>Triple</em></a><em>) or </em><em>iter</em><em>(</em><a class="reference internal" href="model.html#pyoxigraph.Quad" title="pyoxigraph.Quad"><em>Quad</em></a><em>)</em>) – the RDF triples and quads to serialize</p></li>
+<li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.9)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.9)"><em>io.BufferedIOBase</em></a>) – The binary I/O object to write to. For example, it could be a file opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'wb')</span></code>.</p></li>
+<li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.9)"><em>str</em></a>) – the MIME type of the RDF serialization</p></li>
 </ul>
 </dd>
 <dt class="field-even">Raises</dt>
 <dd class="field-even"><ul class="simple">
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the MIME type is not supported.</p></li>
-<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.10)"><strong>TypeError</strong></a> – if a triple is given during a quad format serialization or reverse.</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.9)"><strong>ValueError</strong></a> – if the MIME type is not supported</p></li>
+<li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#TypeError" title="(in Python v3.9)"><strong>TypeError</strong></a> – if a triple is given during a quad format serialization or reverse</p></li>
 </ul>
 </dd>
 </dl>
@@ -146,9 +146,8 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
             <p class="logo"><a href="index.html">
               <img class="logo" src="_static/logo.svg" alt="Logo"/>
             </a></p>
-  <div>
-    <h3><a href="index.html">Table of Contents</a></h3>
-    <ul>
+  <h3><a href="index.html">Table of Contents</a></h3>
+  <ul>
 <li><a class="reference internal" href="#">RDF Parsing and Serialization</a><ul>
 <li><a class="reference internal" href="#parsing">Parsing</a></li>
 <li><a class="reference internal" href="#serialization">Serialization</a></li>
@@ -156,17 +155,12 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 </li>
 </ul>
 
-  </div>
-  <div>
-    <h4>Previous topic</h4>
-    <p class="topless"><a href="model.html"
-                          title="previous chapter">RDF Model</a></p>
-  </div>
-  <div>
-    <h4>Next topic</h4>
-    <p class="topless"><a href="store.html"
-                          title="next chapter">RDF Store</a></p>
-  </div>
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="model.html"
+                        title="previous chapter">RDF Model</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="store/memory.html"
+                        title="next chapter">In-Memory Store</a></p>
   <div role="note" aria-label="source link">
     <h3>This Page</h3>
     <ul class="this-page-menu">
@@ -178,7 +172,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
+      <input type="text" name="q" aria-labelledby="searchlabel" />
       <input type="submit" value="Go" />
     </form>
     </div>
@@ -195,18 +189,18 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
           <a href="genindex.html" title="General Index"
              >index</a></li>
         <li class="right" >
-          <a href="store.html" title="RDF Store"
+          <a href="store/memory.html" title="In-Memory Store"
              >next</a> |</li>
         <li class="right" >
           <a href="model.html" title="RDF Model"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.3.0-beta.4 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="index.html">pyoxigraph 0.2.5 documentation</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">RDF Parsing and Serialization</a></li> 
       </ul>
     </div>
     <div class="footer" role="contentinfo">
-        &#169; Copyright 2022, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.4.0.
+        &#169; Copyright 2021, Oxigraph contributors.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.0.3.
     </div>
   </body>
 </html>
