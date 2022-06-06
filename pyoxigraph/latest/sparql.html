@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>SPARQL utility objects &#8212; pyoxigraph 0.3.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     
     <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/sparql.html" />
@@ -45,19 +46,19 @@
           <div class="body" role="main">
             
   <section id="sparql-utility-objects">
-<h1>SPARQL utility objects<a class="headerlink" href="#sparql-utility-objects" title="Permalink to this headline">¶</a></h1>
+<h1>SPARQL utility objects<a class="headerlink" href="#sparql-utility-objects" title="Permalink to this heading">¶</a></h1>
 <p>Oxigraph provides also some utilities related to SPARQL queries:</p>
 <section id="variable">
-<h2>Variable<a class="headerlink" href="#variable" title="Permalink to this headline">¶</a></h2>
+<h2>Variable<a class="headerlink" href="#variable" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.Variable">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">Variable</span></span><a class="headerlink" href="#pyoxigraph.Variable" title="Permalink to this definition">¶</a></dt>
 <dd><p>A SPARQL query variable.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the variable name as a string.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the variable name is invalid according to the SPARQL grammar.</p>
 </dd>
 </dl>
@@ -70,10 +71,10 @@
 <dt class="sig sig-object py" id="pyoxigraph.Variable.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#pyoxigraph.Variable.value" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the variable name.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
@@ -87,7 +88,7 @@
 
 </section>
 <section id="select-solutions">
-<h2><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> solutions<a class="headerlink" href="#select-solutions" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> solutions<a class="headerlink" href="#select-solutions" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.QuerySolutions">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">QuerySolutions</span></span><a class="headerlink" href="#pyoxigraph.QuerySolutions" title="Permalink to this definition">¶</a></dt>
@@ -102,10 +103,10 @@
 <dt class="sig sig-object py" id="pyoxigraph.QuerySolutions.variables">
 <span class="sig-name descname"><span class="pre">variables</span></span><a class="headerlink" href="#pyoxigraph.QuerySolutions.variables" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the ordered list of all variables that could appear in the query results</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)">list</a>(<a class="reference internal" href="#pyoxigraph.Variable" title="pyoxigraph.Variable">Variable</a>)</p>
 </dd>
 </dl>
@@ -143,7 +144,7 @@ Unpacking also works.</p>
 
 </section>
 <section id="construct-results">
-<h2><code class="docutils literal notranslate"><span class="pre">CONSTRUCT</span></code> results<a class="headerlink" href="#construct-results" title="Permalink to this headline">¶</a></h2>
+<h2><code class="docutils literal notranslate"><span class="pre">CONSTRUCT</span></code> results<a class="headerlink" href="#construct-results" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.QueryTriples">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">QueryTriples</span></span><a class="headerlink" href="#pyoxigraph.QueryTriples" title="Permalink to this definition">¶</a></dt>
@@ -207,7 +208,7 @@ Unpacking also works.</p>
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -230,7 +231,7 @@ Unpacking also works.</p>
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
     </div>
   </body>
 </html>

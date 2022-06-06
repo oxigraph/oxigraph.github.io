@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>RDF Model &#8212; pyoxigraph 0.3.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     
     <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/model.html" />
@@ -45,19 +46,19 @@
           <div class="body" role="main">
             
   <section id="rdf-model">
-<h1>RDF Model<a class="headerlink" href="#rdf-model" title="Permalink to this headline">¶</a></h1>
+<h1>RDF Model<a class="headerlink" href="#rdf-model" title="Permalink to this heading">¶</a></h1>
 <p>Oxigraph provides python classes to represents basic RDF concepts:</p>
 <section id="id1">
-<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-iri">IRIs</a><a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-iri">IRIs</a><a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.NamedNode">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">NamedNode</span></span><a class="headerlink" href="#pyoxigraph.NamedNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>An RDF <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-iri">node identified by an IRI</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the IRI as a string.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the IRI is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc3987">RFC 3987</a>.</p>
 </dd>
 </dl>
@@ -70,10 +71,10 @@
 <dt class="sig sig-object py" id="pyoxigraph.NamedNode.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#pyoxigraph.NamedNode.value" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the named node IRI.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
@@ -87,16 +88,16 @@
 
 </section>
 <section id="id2">
-<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node">Blank Nodes</a><a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node">Blank Nodes</a><a class="headerlink" href="#id2" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.BlankNode">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">BlankNode</span></span><a class="headerlink" href="#pyoxigraph.BlankNode" title="Permalink to this definition">¶</a></dt>
 <dd><p>An RDF <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node">blank node</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – the <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node-identifier">blank node ID</a> (if not present, a random blank node ID is automatically generated).</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the blank node ID is invalid according to NTriples, Turtle, and SPARQL grammars.</p>
 </dd>
 </dl>
@@ -109,11 +110,11 @@
 <dt class="sig sig-object py" id="pyoxigraph.BlankNode.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#pyoxigraph.BlankNode.value" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>the <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-blank-node-identifier">blank node ID</a>.</p>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
@@ -127,20 +128,20 @@
 
 </section>
 <section id="id4">
-<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-literal">Literals</a><a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-literal">Literals</a><a class="headerlink" href="#id4" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.Literal">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">Literal</span></span><a class="headerlink" href="#pyoxigraph.Literal" title="Permalink to this definition">¶</a></dt>
 <dd><p>An RDF <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-literal">literal</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>value</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the literal value or <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-lexical-form">lexical form</a>.</p></li>
 <li><p><strong>datatype</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em>, </em><em>optional</em>) – the literal <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-datatype-iri">datatype IRI</a>.</p></li>
 <li><p><strong>language</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em>, </em><em>optional</em>) – the literal <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-language-tag">language tag</a>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the language tag is not valid according to <a class="reference external" href="https://tools.ietf.org/rfc/rfc5646">RFC 5646</a> (<a class="reference external" href="https://tools.ietf.org/rfc/bcp/bcp47">BCP 47</a>).</p>
 </dd>
 </dl>
@@ -157,11 +158,11 @@
 <dt class="sig sig-object py" id="pyoxigraph.Literal.datatype">
 <span class="sig-name descname"><span class="pre">datatype</span></span><a class="headerlink" href="#pyoxigraph.Literal.datatype" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>the literal <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-datatype-iri">datatype IRI</a>.</p>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a></p>
 </dd>
 </dl>
@@ -179,11 +180,11 @@
 <dt class="sig sig-object py" id="pyoxigraph.Literal.language">
 <span class="sig-name descname"><span class="pre">language</span></span><a class="headerlink" href="#pyoxigraph.Literal.language" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>the literal <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-language-tag">language tag</a>.</p>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a> or None</p>
 </dd>
 </dl>
@@ -198,11 +199,11 @@
 <dt class="sig sig-object py" id="pyoxigraph.Literal.value">
 <span class="sig-name descname"><span class="pre">value</span></span><a class="headerlink" href="#pyoxigraph.Literal.value" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p><p>the literal value or <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-lexical-form">lexical form</a>.</p>
 </p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)">str</a></p>
 </dd>
 </dl>
@@ -216,13 +217,13 @@
 
 </section>
 <section id="id8">
-<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">Triples</a><a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2><a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">Triples</a><a class="headerlink" href="#id8" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.Triple">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">Triple</span></span><a class="headerlink" href="#pyoxigraph.Triple" title="Permalink to this definition">¶</a></dt>
 <dd><p>An RDF <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">triple</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple"><em>Triple</em></a>) – the triple subject.</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a>) – the triple predicate.</p></li>
@@ -243,10 +244,10 @@
 <dt class="sig sig-object py" id="pyoxigraph.Triple.object">
 <span class="sig-name descname"><span class="pre">object</span></span><a class="headerlink" href="#pyoxigraph.Triple.object" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the triple object.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal">Literal</a> or Triple</p>
 </dd>
 </dl>
@@ -260,10 +261,10 @@
 <dt class="sig sig-object py" id="pyoxigraph.Triple.predicate">
 <span class="sig-name descname"><span class="pre">predicate</span></span><a class="headerlink" href="#pyoxigraph.Triple.predicate" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the triple predicate.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a></p>
 </dd>
 </dl>
@@ -277,10 +278,10 @@
 <dt class="sig sig-object py" id="pyoxigraph.Triple.subject">
 <span class="sig-name descname"><span class="pre">subject</span></span><a class="headerlink" href="#pyoxigraph.Triple.subject" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the triple subject.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple">Triple</a></p>
 </dd>
 </dl>
@@ -294,14 +295,14 @@
 
 </section>
 <section id="quads-triples-in-a-rdf-dataset">
-<h2>Quads (<a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">triples</a> in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">RDF dataset</a>)<a class="headerlink" href="#quads-triples-in-a-rdf-dataset" title="Permalink to this headline">¶</a></h2>
+<h2>Quads (<a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">triples</a> in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">RDF dataset</a>)<a class="headerlink" href="#quads-triples-in-a-rdf-dataset" title="Permalink to this heading">¶</a></h2>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.Quad">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">Quad</span></span><a class="headerlink" href="#pyoxigraph.Quad" title="Permalink to this definition">¶</a></dt>
 <dd><p>An RDF <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-triple">triple</a>.
 in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#dfn-rdf-dataset">RDF dataset</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>subject</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple"><em>Triple</em></a>) – the quad subject.</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a>) – the quad predicate.</p></li>
@@ -327,10 +328,10 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dt class="sig sig-object py" id="pyoxigraph.Quad.graph_name">
 <span class="sig-name descname"><span class="pre">graph_name</span></span><a class="headerlink" href="#pyoxigraph.Quad.graph_name" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the quad graph name.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph">DefaultGraph</a></p>
 </dd>
 </dl>
@@ -344,10 +345,10 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dt class="sig sig-object py" id="pyoxigraph.Quad.object">
 <span class="sig-name descname"><span class="pre">object</span></span><a class="headerlink" href="#pyoxigraph.Quad.object" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the quad object.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Literal" title="pyoxigraph.Literal">Literal</a> or Triple</p>
 </dd>
 </dl>
@@ -361,10 +362,10 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dt class="sig sig-object py" id="pyoxigraph.Quad.predicate">
 <span class="sig-name descname"><span class="pre">predicate</span></span><a class="headerlink" href="#pyoxigraph.Quad.predicate" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the quad predicate.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a></p>
 </dd>
 </dl>
@@ -378,10 +379,10 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dt class="sig sig-object py" id="pyoxigraph.Quad.subject">
 <span class="sig-name descname"><span class="pre">subject</span></span><a class="headerlink" href="#pyoxigraph.Quad.subject" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the quad subject.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a> or <a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple">Triple</a></p>
 </dd>
 </dl>
@@ -395,10 +396,10 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
 <dt class="sig sig-object py" id="pyoxigraph.Quad.triple">
 <span class="sig-name descname"><span class="pre">triple</span></span><a class="headerlink" href="#pyoxigraph.Quad.triple" title="Permalink to this definition">¶</a></dt>
 <dd><dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>the quad underlying triple.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference internal" href="#pyoxigraph.Triple" title="pyoxigraph.Triple">Triple</a></p>
 </dd>
 </dl>
@@ -469,7 +470,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -492,7 +493,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
     </div>
   </body>
 </html>

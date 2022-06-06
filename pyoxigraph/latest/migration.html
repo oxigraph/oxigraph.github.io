@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>Migration Guide &#8212; pyoxigraph 0.3.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     
     <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/migration.html" />
@@ -41,9 +42,9 @@
           <div class="body" role="main">
             
   <section id="migration-guide">
-<h1>Migration Guide<a class="headerlink" href="#migration-guide" title="Permalink to this headline">¶</a></h1>
+<h1>Migration Guide<a class="headerlink" href="#migration-guide" title="Permalink to this heading">¶</a></h1>
 <section id="from-0-2-to-0-3">
-<h2>From 0.2 to 0.3<a class="headerlink" href="#from-0-2-to-0-3" title="Permalink to this headline">¶</a></h2>
+<h2>From 0.2 to 0.3<a class="headerlink" href="#from-0-2-to-0-3" title="Permalink to this heading">¶</a></h2>
 <ul>
 <li><p>Python 3.6 and <code class="docutils literal notranslate"><span class="pre">manylinux2010</span></code> (<a class="reference external" href="https://www.python.org/dev/peps/pep-0571/">PEP 571</a>) support have been removed. The new minimal versions are Python 3.7 and <code class="docutils literal notranslate"><span class="pre">manylinux2014</span></code> (<a class="reference external" href="https://www.python.org/dev/peps/pep-0599/">PEP 599</a>).</p></li>
 <li><p>The on-disk storage system has been rebuilt on top of <a class="reference external" href="http://rocksdb.org/">RocksDB</a>.
@@ -114,7 +115,7 @@ and the exposed state does not change for the complete duration of a read operat
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -134,7 +135,7 @@ and the exposed state does not change for the complete duration of a read operat
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
     </div>
   </body>
 </html>

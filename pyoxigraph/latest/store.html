@@ -1,10 +1,10 @@
 
 <!DOCTYPE html>
 
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>RDF Store &#8212; pyoxigraph 0.3.2 documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
@@ -13,6 +13,7 @@
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/jquery.js"></script>
     <script src="_static/underscore.js"></script>
+    <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
     
     <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/store.html" />
@@ -45,7 +46,7 @@
           <div class="body" role="main">
             
   <section id="rdf-store">
-<h1>RDF Store<a class="headerlink" href="#rdf-store" title="Permalink to this headline">¶</a></h1>
+<h1>RDF Store<a class="headerlink" href="#rdf-store" title="Permalink to this heading">¶</a></h1>
 <dl class="py class">
 <dt class="sig sig-object py" id="pyoxigraph.Store">
 <em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pyoxigraph.</span></span><span class="sig-name descname"><span class="pre">Store</span></span><a class="headerlink" href="#pyoxigraph.Store" title="Permalink to this definition">¶</a></dt>
@@ -56,12 +57,12 @@ It is based on the <a class="reference external" href="https://rocksdb.org/">Roc
 been “committed” (i.e. no partial writes) and the exposed state does not change for the complete duration
 of a read operation (e.g. a SPARQL query) or a read/write operation (e.g. a SPARQL update).</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional.</em>) – the path of the directory in which the store should read and write its data. If the directory does not exist, it is created.
 If no directory is provided a temporary one is created and removed when the Python garbage collector removes the store.
 In this case, the store data are kept in memory and never written on disk.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if the target directory contains invalid data or could not be accessed.</p>
 </dd>
 </dl>
@@ -77,10 +78,10 @@ In this case, the store data are kept in memory and never written on disk.</p>
 <span class="sig-name descname"><span class="pre">add</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.add" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a quad to the store.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>quad</strong> (<a class="reference internal" href="model.html#pyoxigraph.Quad" title="pyoxigraph.Quad"><em>Quad</em></a>) – the quad to add.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the quad insertion.</p>
 </dd>
 </dl>
@@ -97,10 +98,10 @@ In this case, the store data are kept in memory and never written on disk.</p>
 <span class="sig-name descname"><span class="pre">add_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.add_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Adds a named graph to the store.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a>) – the name of the name graph to add.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the named graph insertion.</p>
 </dd>
 </dl>
@@ -127,10 +128,10 @@ but hard links will be used to point to the original database immutable snapshot
 This allows cheap regular backups.</p>
 <p>If you want to move your data to another RDF storage system, you should have a look at the <code class="xref py py-func docutils literal notranslate"><span class="pre">dump_dataset()</span></code> function instead.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>target_directory</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the directory name to save the database to.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the backup.</p>
 </dd>
 </dl>
@@ -155,7 +156,7 @@ If the file is invalid only a piece of it might be written to the store.</p>
 For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to read from. For example, it could be a file path as a string or a file reader opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
@@ -163,7 +164,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which the triples should be stored. By default, the default graph is used.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the MIME type is not supported or the <cite>to_graph</cite> parameter is given with a quad file.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SyntaxError" title="(in Python v3.10)"><strong>SyntaxError</strong></a> – if the provided data is invalid.</p></li>
@@ -184,7 +185,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="sig-name descname"><span class="pre">clear</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.clear" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears the store by removing all its contents.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the operation.</p>
 </dd>
 </dl>
@@ -204,7 +205,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="sig-name descname"><span class="pre">clear_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.clear_graph" title="Permalink to this definition">¶</a></dt>
 <dd><p>Clears a graph from the store without removing it.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the operation.</p>
 </dd>
 </dl>
@@ -235,14 +236,14 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>output</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to write to. For example, it could be a file path as a string or a file writer opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'wb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
 <li><p><strong>from_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if a triple based format is requested, the store graph from which dump the triples. By default, the default graph is used.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the MIME type is not supported or the <cite>from_graph</cite> parameter is given with a quad syntax.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during a quad lookup</p></li>
@@ -265,7 +266,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dd><p>Flushes all buffers and ensures that all writes are saved on disk.</p>
 <p>Flushes are automatically done using background threads but might lag a little bit.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the flush.</p>
 </dd>
 </dl>
@@ -290,7 +291,7 @@ The <a class="reference internal" href="#pyoxigraph.Store.bulk_load" title="pyox
 For example, <code class="docutils literal notranslate"><span class="pre">application/turtle</span></code> could also be used for <a class="reference external" href="https://www.w3.org/TR/turtle/">Turtle</a>
 and <code class="docutils literal notranslate"><span class="pre">application/xml</span></code> for <a class="reference external" href="https://www.w3.org/TR/rdf-syntax-grammar/">RDF/XML</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>input</strong> (<a class="reference external" href="https://docs.python.org/3/library/io.html#io.RawIOBase" title="(in Python v3.10)"><em>io.RawIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/io.html#io.BufferedIOBase" title="(in Python v3.10)"><em>io.BufferedIOBase</em></a><em> or </em><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – The binary I/O object or file path to read from. For example, it could be a file path as a string or a file reader opened in binary mode with <code class="docutils literal notranslate"><span class="pre">open('my_file.ttl',</span> <span class="pre">'rb')</span></code>.</p></li>
 <li><p><strong>mime_type</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the MIME type of the RDF serialization.</p></li>
@@ -298,7 +299,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><strong>to_graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – if it is a file composed of triples, the graph in which the triples should be stored. By default, the default graph is used.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#ValueError" title="(in Python v3.10)"><strong>ValueError</strong></a> – if the MIME type is not supported or the <cite>to_graph</cite> parameter is given with a quad file.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SyntaxError" title="(in Python v3.10)"><strong>SyntaxError</strong></a> – if the provided data is invalid.</p></li>
@@ -319,13 +320,13 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="sig-name descname"><span class="pre">named_graphs</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.named_graphs" title="Permalink to this definition">¶</a></dt>
 <dd><p>Returns an iterator over all the store named graphs.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
+<dt class="field-odd">Returns<span class="colon">:</span></dt>
 <dd class="field-odd"><p>an iterator of the store graph names.</p>
 </dd>
-<dt class="field-even">Return type</dt>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
 <dd class="field-even"><p>iter(<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode">NamedNode</a> or <a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode">BlankNode</a>)</p>
 </dd>
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the named graphs lookup.</p>
 </dd>
 </dl>
@@ -343,7 +344,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dd><p>Optimizes the database for future workload.</p>
 <p>Useful to call after a batch upload or another similar operation.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Raises</dt>
+<dt class="field-odd">Raises<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the optimization.</p>
 </dd>
 </dl>
@@ -354,7 +355,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="sig-name descname"><span class="pre">quads_for_pattern</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">subject</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">predicate</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">object</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">graph_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.quads_for_pattern" title="Permalink to this definition">¶</a></dt>
 <dd><p>Looks for the quads matching a given pattern.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>subject</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><em>None</em>) – the quad subject or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> to match everything.</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><em>None</em>) – the quad predicate or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> to match everything.</p></li>
@@ -362,13 +363,13 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><strong>graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em>) – the quad graph name. To match only the default graph, use <a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultGraph</span></code></a>. To match everything use <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>an iterator of the quads matching the pattern.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p>iter(<a class="reference internal" href="model.html#pyoxigraph.Quad" title="pyoxigraph.Quad">Quad</a>)</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the quads lookup.</p>
 </dd>
 </dl>
@@ -385,7 +386,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_graph_as_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_graphs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.query" title="Permalink to this definition">¶</a></dt>
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL 1.1 query</a>.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>query</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the query to execute.</p></li>
 <li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the SPARQL query or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
@@ -394,13 +395,13 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><strong>named_graphs</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.10)"><em>list</em></a><em>(</em><a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em>) or </em><em>None</em><em>, </em><em>optional</em>) – list of the named graphs that could be used in SPARQL <cite>GRAPH</cite> clause. By default, all the store named graphs are available.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>a <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)"><code class="xref py py-class docutils literal notranslate"><span class="pre">bool</span></code></a> for <code class="docutils literal notranslate"><span class="pre">ASK</span></code> queries, an iterator of <a class="reference internal" href="model.html#pyoxigraph.Triple" title="pyoxigraph.Triple"><code class="xref py py-class docutils literal notranslate"><span class="pre">Triple</span></code></a> for <code class="docutils literal notranslate"><span class="pre">CONSTRUCT</span></code> and <code class="docutils literal notranslate"><span class="pre">DESCRIBE</span></code> queries and an iterator of <a class="reference internal" href="sparql.html#pyoxigraph.QuerySolution" title="pyoxigraph.QuerySolution"><code class="xref py py-class docutils literal notranslate"><span class="pre">QuerySolution</span></code></a> for <code class="docutils literal notranslate"><span class="pre">SELECT</span></code> queries.</p>
 </dd>
-<dt class="field-odd">Return type</dt>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
 <dd class="field-odd"><p><a class="reference internal" href="sparql.html#pyoxigraph.QuerySolutions" title="pyoxigraph.QuerySolutions">QuerySolutions</a> or <a class="reference internal" href="sparql.html#pyoxigraph.QueryTriples" title="pyoxigraph.QueryTriples">QueryTriples</a> or <a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.10)">bool</a></p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SyntaxError" title="(in Python v3.10)"><strong>SyntaxError</strong></a> – if the provided query is invalid.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens while reading the store.</p></li>
@@ -435,10 +436,10 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="sig-name descname"><span class="pre">remove</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">quad</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.remove" title="Permalink to this definition">¶</a></dt>
 <dd><p>Removes a quad from the store.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>quad</strong> (<a class="reference internal" href="model.html#pyoxigraph.Quad" title="pyoxigraph.Quad"><em>Quad</em></a>) – the quad to remove.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the quad removal.</p>
 </dd>
 </dl>
@@ -458,10 +459,10 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dd><p>Removes a graph from the store.</p>
 <p>The default graph will not be removed but just cleared.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a>) – the name of the name graph to remove.</p>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the named graph removal.</p>
 </dd>
 </dl>
@@ -480,13 +481,13 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-update/">SPARQL 1.1 update</a>.</p>
 <p>Updates are applied in a transactional manner: either the full operation succeeds or nothing is written to the database.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><ul class="simple">
 <li><p><strong>update</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a>) – the update to execute.</p></li>
 <li><p><strong>base_iri</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the base IRI used to resolve the relative IRIs in the SPARQL update or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> if relative IRI resolution should not be done.</p></li>
 </ul>
 </dd>
-<dt class="field-even">Raises</dt>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
 <dd class="field-even"><ul class="simple">
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#SyntaxError" title="(in Python v3.10)"><strong>SyntaxError</strong></a> – if the provided update is invalid.</p></li>
 <li><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens while reading the store.</p></li>
@@ -558,7 +559,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
     </form>
     </div>
 </div>
-<script>$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
@@ -581,7 +582,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
     </div>
     <div class="footer" role="contentinfo">
         &#169; Copyright 2022, Oxigraph contributors.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 4.5.0.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 5.0.1.
     </div>
   </body>
 </html>
