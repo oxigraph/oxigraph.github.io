@@ -6,10 +6,10 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="RDF Parsing and Serialization" href="io.html" /><link rel="prev" title="pyoxigraph 0.3.6" href="index.html" />
         <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/model.html" />
 
-    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
         <title>RDF Model - pyoxigraph 0.3.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -584,10 +584,10 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
                 </div>
                 <div class="title">RDF Parsing and Serialization</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="index.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -623,18 +623,57 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">RDF Model</a><ul>
-<li><a class="reference internal" href="#id1">IRIs</a></li>
-<li><a class="reference internal" href="#id2">Blank Nodes</a></li>
-<li><a class="reference internal" href="#id4">Literals</a></li>
-<li><a class="reference internal" href="#id8">Triples</a></li>
-<li><a class="reference internal" href="#quads-triples-in-a-rdf-dataset">Quads (triples in a RDF dataset)</a></li>
+<li><a class="reference internal" href="#id1">IRIs</a><ul>
+<li><a class="reference internal" href="#pyoxigraph.NamedNode"><code class="docutils literal notranslate"><span class="pre">NamedNode</span></code></a><ul>
+<li><a class="reference internal" href="#pyoxigraph.NamedNode.value"><code class="docutils literal notranslate"><span class="pre">NamedNode.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Blank Nodes</a><ul>
+<li><a class="reference internal" href="#pyoxigraph.BlankNode"><code class="docutils literal notranslate"><span class="pre">BlankNode</span></code></a><ul>
+<li><a class="reference internal" href="#pyoxigraph.BlankNode.value"><code class="docutils literal notranslate"><span class="pre">BlankNode.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id4">Literals</a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Literal"><code class="docutils literal notranslate"><span class="pre">Literal</span></code></a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Literal.datatype"><code class="docutils literal notranslate"><span class="pre">Literal.datatype</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Literal.language"><code class="docutils literal notranslate"><span class="pre">Literal.language</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Literal.value"><code class="docutils literal notranslate"><span class="pre">Literal.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id8">Triples</a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Triple"><code class="docutils literal notranslate"><span class="pre">Triple</span></code></a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Triple.object"><code class="docutils literal notranslate"><span class="pre">Triple.object</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Triple.predicate"><code class="docutils literal notranslate"><span class="pre">Triple.predicate</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Triple.subject"><code class="docutils literal notranslate"><span class="pre">Triple.subject</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#quads-triples-in-a-rdf-dataset">Quads (triples in a RDF dataset)</a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Quad"><code class="docutils literal notranslate"><span class="pre">Quad</span></code></a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Quad.graph_name"><code class="docutils literal notranslate"><span class="pre">Quad.graph_name</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Quad.object"><code class="docutils literal notranslate"><span class="pre">Quad.object</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Quad.predicate"><code class="docutils literal notranslate"><span class="pre">Quad.predicate</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Quad.subject"><code class="docutils literal notranslate"><span class="pre">Quad.subject</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Quad.triple"><code class="docutils literal notranslate"><span class="pre">Quad.triple</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pyoxigraph.DefaultGraph"><code class="docutils literal notranslate"><span class="pre">DefaultGraph</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -651,6 +690,7 @@ in a <a class="reference external" href="https://www.w3.org/TR/rdf11-concepts/#d
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
 </html>

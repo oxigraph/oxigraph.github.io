@@ -6,10 +6,10 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="SPARQL utility objects" href="sparql.html" /><link rel="prev" title="RDF Parsing and Serialization" href="io.html" />
         <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/store.html" />
 
-    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
         <title>RDF Store - pyoxigraph 0.3.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -135,7 +135,7 @@
           <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
         </button>
       </div>
-      <label class="toc-overlay-icon toc-header-icon no-toc" for="__toc">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
         <div class="visually-hidden">Toggle table of contents sidebar</div>
         <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
       </label>
@@ -191,7 +191,7 @@
               <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
             </button>
           </div>
-          <label class="toc-overlay-icon toc-content-icon no-toc" for="__toc">
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
             <div class="visually-hidden">Toggle table of contents sidebar</div>
             <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
           </label>
@@ -687,10 +687,10 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
                 </div>
                 <div class="title">SPARQL utility objects</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           <a class="prev-page" href="io.html">
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
                   <span>Previous</span>
@@ -720,8 +720,45 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
         
       </footer>
     </div>
-    <aside class="toc-drawer no-toc">
+    <aside class="toc-drawer">
       
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">RDF Store</a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Store"><code class="docutils literal notranslate"><span class="pre">Store</span></code></a><ul>
+<li><a class="reference internal" href="#pyoxigraph.Store.add"><code class="docutils literal notranslate"><span class="pre">Store.add()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.add_graph"><code class="docutils literal notranslate"><span class="pre">Store.add_graph()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.backup"><code class="docutils literal notranslate"><span class="pre">Store.backup()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.bulk_load"><code class="docutils literal notranslate"><span class="pre">Store.bulk_load()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.clear"><code class="docutils literal notranslate"><span class="pre">Store.clear()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.clear_graph"><code class="docutils literal notranslate"><span class="pre">Store.clear_graph()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.dump"><code class="docutils literal notranslate"><span class="pre">Store.dump()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.flush"><code class="docutils literal notranslate"><span class="pre">Store.flush()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.load"><code class="docutils literal notranslate"><span class="pre">Store.load()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.named_graphs"><code class="docutils literal notranslate"><span class="pre">Store.named_graphs()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.optimize"><code class="docutils literal notranslate"><span class="pre">Store.optimize()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.quads_for_pattern"><code class="docutils literal notranslate"><span class="pre">Store.quads_for_pattern()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.query"><code class="docutils literal notranslate"><span class="pre">Store.query()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.remove"><code class="docutils literal notranslate"><span class="pre">Store.remove()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.remove_graph"><code class="docutils literal notranslate"><span class="pre">Store.remove_graph()</span></code></a></li>
+<li><a class="reference internal" href="#pyoxigraph.Store.update"><code class="docutils literal notranslate"><span class="pre">Store.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
       
       
     </aside>
@@ -731,6 +768,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
 </html>

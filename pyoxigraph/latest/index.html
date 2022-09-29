@@ -6,10 +6,10 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="RDF Model" href="model.html" />
         <link rel="canonical" href="https://oxigraph.org/pyoxigraph/stable/index.html" />
 
-    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.1.1, furo 2022.06.21"/>
+    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
         <title>pyoxigraph 0.3.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=40978830699223671f4072448e654b5958f38b89" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -238,23 +238,105 @@
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="model.html">RDF Model</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="model.html#id1">IRIs</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model.html#id2">Blank Nodes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model.html#id4">Literals</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model.html#id8">Triples</a></li>
-<li class="toctree-l2"><a class="reference internal" href="model.html#quads-triples-in-a-rdf-dataset">Quads (triples in a RDF dataset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#id1">IRIs</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#pyoxigraph.NamedNode"><code class="docutils literal notranslate"><span class="pre">NamedNode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.NamedNode.value"><code class="docutils literal notranslate"><span class="pre">NamedNode.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#id2">Blank Nodes</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#pyoxigraph.BlankNode"><code class="docutils literal notranslate"><span class="pre">BlankNode</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.BlankNode.value"><code class="docutils literal notranslate"><span class="pre">BlankNode.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#id4">Literals</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#pyoxigraph.Literal"><code class="docutils literal notranslate"><span class="pre">Literal</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Literal.datatype"><code class="docutils literal notranslate"><span class="pre">Literal.datatype</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Literal.language"><code class="docutils literal notranslate"><span class="pre">Literal.language</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Literal.value"><code class="docutils literal notranslate"><span class="pre">Literal.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#id8">Triples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#pyoxigraph.Triple"><code class="docutils literal notranslate"><span class="pre">Triple</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Triple.object"><code class="docutils literal notranslate"><span class="pre">Triple.object</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Triple.predicate"><code class="docutils literal notranslate"><span class="pre">Triple.predicate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Triple.subject"><code class="docutils literal notranslate"><span class="pre">Triple.subject</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="model.html#quads-triples-in-a-rdf-dataset">Quads (triples in a RDF dataset)</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="model.html#pyoxigraph.Quad"><code class="docutils literal notranslate"><span class="pre">Quad</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Quad.graph_name"><code class="docutils literal notranslate"><span class="pre">Quad.graph_name</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Quad.object"><code class="docutils literal notranslate"><span class="pre">Quad.object</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Quad.predicate"><code class="docutils literal notranslate"><span class="pre">Quad.predicate</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Quad.subject"><code class="docutils literal notranslate"><span class="pre">Quad.subject</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="model.html#pyoxigraph.Quad.triple"><code class="docutils literal notranslate"><span class="pre">Quad.triple</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph"><code class="docutils literal notranslate"><span class="pre">DefaultGraph</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="io.html">RDF Parsing and Serialization</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="io.html#parsing">Parsing</a></li>
-<li class="toctree-l2"><a class="reference internal" href="io.html#serialization">Serialization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#parsing">Parsing</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#pyoxigraph.parse"><code class="docutils literal notranslate"><span class="pre">parse()</span></code></a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="store.html">RDF Store</a></li>
+<li class="toctree-l2"><a class="reference internal" href="io.html#serialization">Serialization</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="io.html#pyoxigraph.serialize"><code class="docutils literal notranslate"><span class="pre">serialize()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="store.html">RDF Store</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="store.html#pyoxigraph.Store"><code class="docutils literal notranslate"><span class="pre">Store</span></code></a><ul>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.add"><code class="docutils literal notranslate"><span class="pre">Store.add()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.add_graph"><code class="docutils literal notranslate"><span class="pre">Store.add_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.backup"><code class="docutils literal notranslate"><span class="pre">Store.backup()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.bulk_load"><code class="docutils literal notranslate"><span class="pre">Store.bulk_load()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.clear"><code class="docutils literal notranslate"><span class="pre">Store.clear()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.clear_graph"><code class="docutils literal notranslate"><span class="pre">Store.clear_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.dump"><code class="docutils literal notranslate"><span class="pre">Store.dump()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.flush"><code class="docutils literal notranslate"><span class="pre">Store.flush()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.load"><code class="docutils literal notranslate"><span class="pre">Store.load()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.named_graphs"><code class="docutils literal notranslate"><span class="pre">Store.named_graphs()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.optimize"><code class="docutils literal notranslate"><span class="pre">Store.optimize()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.quads_for_pattern"><code class="docutils literal notranslate"><span class="pre">Store.quads_for_pattern()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.query"><code class="docutils literal notranslate"><span class="pre">Store.query()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.remove"><code class="docutils literal notranslate"><span class="pre">Store.remove()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.remove_graph"><code class="docutils literal notranslate"><span class="pre">Store.remove_graph()</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="store.html#pyoxigraph.Store.update"><code class="docutils literal notranslate"><span class="pre">Store.update()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="sparql.html">SPARQL utility objects</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="sparql.html#variable">Variable</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sparql.html#select-solutions"><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> solutions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sparql.html#construct-results"><code class="docutils literal notranslate"><span class="pre">CONSTRUCT</span></code> results</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sparql.html#variable">Variable</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sparql.html#pyoxigraph.Variable"><code class="docutils literal notranslate"><span class="pre">Variable</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sparql.html#pyoxigraph.Variable.value"><code class="docutils literal notranslate"><span class="pre">Variable.value</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sparql.html#select-solutions"><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> solutions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sparql.html#pyoxigraph.QuerySolutions"><code class="docutils literal notranslate"><span class="pre">QuerySolutions</span></code></a><ul>
+<li class="toctree-l4"><a class="reference internal" href="sparql.html#pyoxigraph.QuerySolutions.variables"><code class="docutils literal notranslate"><span class="pre">QuerySolutions.variables</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="sparql.html#pyoxigraph.QuerySolution"><code class="docutils literal notranslate"><span class="pre">QuerySolution</span></code></a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="sparql.html#construct-results"><code class="docutils literal notranslate"><span class="pre">CONSTRUCT</span></code> results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="sparql.html#pyoxigraph.QueryTriples"><code class="docutils literal notranslate"><span class="pre">QueryTriples</span></code></a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="migration.html">Migration Guide</a><ul>
@@ -284,7 +366,7 @@
                 </div>
                 <div class="title">RDF Model</div>
               </div>
-              <svg><use href="#svg-arrow-right"></use></svg>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
           
         </div>
@@ -313,7 +395,7 @@
       <div class="toc-sticky toc-scroll">
         <div class="toc-title-container">
           <span class="toc-title">
-            Contents
+            On this page
           </span>
         </div>
         <div class="toc-tree-container">
@@ -340,6 +422,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     <script src="_static/scripts/furo.js"></script>
     </body>
 </html>
