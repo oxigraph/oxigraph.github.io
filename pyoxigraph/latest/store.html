@@ -6,10 +6,10 @@
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="next" title="SPARQL utility objects" href="sparql.html" /><link rel="prev" title="RDF Parsing and Serialization" href="io.html" />
         <link rel="canonical" href="https://pyoxigraph.readthedocs.io/en/stable/store.html" />
 
-    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.2.2, furo 2022.09.15"/>
+    <link rel="shortcut icon" href="_static/logo.svg"/><meta name="generator" content="sphinx-5.2.3, furo 2022.09.29"/>
         <title>RDF Store - pyoxigraph 0.3.6 documentation</title>
       <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=9ec31e2665bf879c1d47d93a8ec4893870ee1e45" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?digest=d81277517bee4d6b0349d71bb2661d4890b5617c" />
     <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -183,7 +183,8 @@
           <span>Back to top</span>
         </a>
         <div class="content-icon-container">
-          <div class="theme-toggle-container theme-toggle-content">
+          
+<div class="theme-toggle-container theme-toggle-content">
             <button class="theme-toggle">
               <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
               <svg class="theme-icon-when-auto"><use href="#svg-sun-half"></use></svg>
@@ -210,7 +211,7 @@ been “committed” (i.e. no partial writes) and the exposed state does not cha
 of a read operation (e.g. a SPARQL query) or a read/write operation (e.g. a SPARQL update).</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
-<dd class="field-odd"><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional.</em>) – the path of the directory in which the store should read and write its data. If the directory does not exist, it is created.
+<dd class="field-odd"><p><strong>path</strong> (<a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.10)"><em>str</em></a><em> or </em><em>None</em><em>, </em><em>optional</em>) – the path of the directory in which the store should read and write its data. If the directory does not exist, it is created.
 If no directory is provided a temporary one is created and removed when the Python garbage collector removes the store.
 In this case, the store data are kept in memory and never written on disk.</p>
 </dd>
@@ -291,7 +292,7 @@ This allows cheap regular backups.</p>
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyoxigraph.Store.bulk_load">
-<span class="sig-name descname"><span class="pre">bulk_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.bulk_load" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">bulk_load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.bulk_load" title="Permalink to this definition">#</a></dt>
 <dd><p>Loads an RDF serialization into the store.</p>
 <p>This function is designed to be as fast as possible on big files <strong>without</strong> transactional guarantees.
 If the file is invalid only a piece of it might be written to the store.</p>
@@ -357,8 +358,11 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <span class="sig-name descname"><span class="pre">clear_graph</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">graph_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.clear_graph" title="Permalink to this definition">#</a></dt>
 <dd><p>Clears a graph from the store without removing it.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Raises<span class="colon">:</span></dt>
-<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the operation.</p>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>graph_name</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a>) – the name of the name graph to clear.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><a class="reference external" href="https://docs.python.org/3/library/exceptions.html#IOError" title="(in Python v3.10)"><strong>IOError</strong></a> – if an I/O error happens during the operation.</p>
 </dd>
 </dl>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">()</span>
@@ -426,7 +430,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyoxigraph.Store.load">
-<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.load" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">input</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">/</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mime_type</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">to_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.load" title="Permalink to this definition">#</a></dt>
 <dd><p>Loads an RDF serialization into the store.</p>
 <p>Loads are applied in a transactional manner: either the full operation succeeds or nothing is written to the database.
 The <a class="reference internal" href="#pyoxigraph.Store.bulk_load" title="pyoxigraph.Store.bulk_load"><code class="xref py py-func docutils literal notranslate"><span class="pre">bulk_load()</span></code></a> method is also available for much faster loading of big files but without transactional guarantees.</p>
@@ -512,7 +516,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <li><p><strong>subject</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><em>None</em>) – the quad subject or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> to match everything.</p></li>
 <li><p><strong>predicate</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><em>None</em>) – the quad predicate or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> to match everything.</p></li>
 <li><p><strong>object</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.Literal" title="pyoxigraph.Literal"><em>Literal</em></a><em> or </em><em>None</em>) – the quad object or <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code> to match everything.</p></li>
-<li><p><strong>graph</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em>) – the quad graph name. To match only the default graph, use <a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultGraph</span></code></a>. To match everything use <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
+<li><p><strong>graph_name</strong> (<a class="reference internal" href="model.html#pyoxigraph.NamedNode" title="pyoxigraph.NamedNode"><em>NamedNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.BlankNode" title="pyoxigraph.BlankNode"><em>BlankNode</em></a><em> or </em><a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><em>DefaultGraph</em></a><em> or </em><em>None</em>) – the quad graph name. To match only the default graph, use <a class="reference internal" href="model.html#pyoxigraph.DefaultGraph" title="pyoxigraph.DefaultGraph"><code class="xref py py-class docutils literal notranslate"><span class="pre">DefaultGraph</span></code></a>. To match everything use <code class="xref py py-const docutils literal notranslate"><span class="pre">None</span></code>.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns<span class="colon">:</span></dt>
@@ -535,7 +539,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyoxigraph.Store.query">
-<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_graph_as_union</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_graph</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_graphs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.query" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">query</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">use_default_graph_as_union</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default_graph</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">named_graphs</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.query" title="Permalink to this definition">#</a></dt>
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-query/">SPARQL 1.1 query</a>.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -563,7 +567,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 <p><code class="docutils literal notranslate"><span class="pre">SELECT</span></code> query:</p>
 <div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">store</span> <span class="o">=</span> <span class="n">Store</span><span class="p">()</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">store</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">Quad</span><span class="p">(</span><span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com&#39;</span><span class="p">),</span> <span class="n">NamedNode</span><span class="p">(</span><span class="s1">&#39;http://example.com/p&#39;</span><span class="p">),</span> <span class="n">Literal</span><span class="p">(</span><span class="s1">&#39;1&#39;</span><span class="p">)))</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span><span class="p">(</span><span class="n">solution</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">solution</span> <span class="ow">in</span> <span class="n">store</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;SELECT ?s WHERE { ?s ?p ?o }&#39;</span><span class="p">))</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="p">[</span><span class="n">solution</span><span class="p">[</span><span class="s1">&#39;s&#39;</span><span class="p">]</span> <span class="k">for</span> <span class="n">solution</span> <span class="ow">in</span> <span class="n">store</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s1">&#39;SELECT ?s WHERE { ?s ?p ?o }&#39;</span><span class="p">)]</span>
 <span class="go">[&lt;NamedNode value=http://example.com&gt;]</span>
 </pre></div>
 </div>
@@ -629,7 +633,7 @@ and <code class="docutils literal notranslate"><span class="pre">application/xml
 
 <dl class="py method">
 <dt class="sig sig-object py" id="pyoxigraph.Store.update">
-<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.update" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">update</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">update</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">*</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_iri</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pyoxigraph.Store.update" title="Permalink to this definition">#</a></dt>
 <dd><p>Executes a <a class="reference external" href="https://www.w3.org/TR/sparql11-update/">SPARQL 1.1 update</a>.</p>
 <p>Updates are applied in a transactional manner: either the full operation succeeds or nothing is written to the database.</p>
 <dl class="field-list simple">
